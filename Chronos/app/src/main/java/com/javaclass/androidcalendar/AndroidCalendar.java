@@ -12,7 +12,7 @@ public class AndroidCalendar extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		//sets the main layout of the activity
 		setContentView(R.layout.activity_main);
 		
