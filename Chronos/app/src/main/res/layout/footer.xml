@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/footer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="#59dbe0"
+    android:gravity="center" >
+
+    <!-- Content below header and above footer -->
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="Monthly View"
+            android:layout_width="fill_parent"
+            android:padding="5px"
+            android:layout_gravity="center"></Button>
+        <Button
+            android:layout_height="wrap_content"
+            android:text="Daily View"
+            android:layout_width="fill_parent"
+            android:id="@+id/buttonDailyView"
+            android:padding="5px"
+            android:layout_gravity="center"></Button>
+    </LinearLayout>
+
+</RelativeLayout>

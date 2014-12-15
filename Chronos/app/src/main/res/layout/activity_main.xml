@@ -4,10 +4,25 @@
     android:padding="20dp"  
     android:background="@color/grey"
     android:orientation="vertical" >
- 
-    <CalendarView
-        android:id="@+id/calendar"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" /> 
+
+
+      <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" >
+          <!-- Footer aligned to bottom -->
+          <include layout="@layout/footer"
+              android:id="@+id/include" />
+          <com.javaclass.androidcalendar.ExtendedCalendarView
+              android:id="@+id/calendar"
+              android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              android:layout_above="@+id/include"/>
+
+      </RelativeLayout>
+
+    <!--<CalendarView-->
+        <!--android:id="@+id/calendar"-->
+        <!--android:layout_margin="10dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />&ndash;&gt;-->
 </LinearLayout>

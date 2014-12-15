@@ -1,6 +1,9 @@
 package com.javaclass.androidcalendar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.Toast;
@@ -15,11 +18,15 @@ public class AndroidCalendar extends Activity {
 
 		//sets the main layout of the activity
 		setContentView(R.layout.activity_main);
-		
+
+        ExtendedCalendarView calendar = (ExtendedCalendarView) findViewById(R.id.calendar);
+
+
 		//initializes the calendarview
-		initializeCalendar();
+		//initializeCalendar();
 	}
 
+    /*
 	public void initializeCalendar() {
 		calendar = (CalendarView) findViewById(R.id.calendar);
 
@@ -52,4 +59,5 @@ public class AndroidCalendar extends Activity {
 			}
 		});
 	}
+	*/
 }
