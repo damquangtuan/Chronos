@@ -1,11 +1,16 @@
 package com.javaclass.androidcalendar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.RectF;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,7 +21,7 @@ import java.util.List;
  * Created by root on 14. 12. 11.
  */
 public class WeeklyActivity extends Activity implements WeekView.MonthChangeListener,
-        WeekView.EventClickListener, WeekView.EventLongPressListener {
+        WeekView.EventClickListener, WeekView.EventLongPressListener, View.OnClickListener {
 
     private static final int TYPE_DAY_VIEW = 1;
     private static final int TYPE_THREE_DAY_VIEW = 2;
@@ -29,6 +34,8 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weekly);
 
+        Button addEvent = (Button) findViewById(R.id.week_add_button);
+        addEvent.setOnClickListener(this);
         // Get a reference for the week view in the layout.
         mWeekView = (WeekView) findViewById(R.id.weekView);
 
@@ -219,5 +226,22 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
     @Override
     public void onEventLongPress(WeekViewEvent event, RectF eventRect) {
         Toast.makeText(WeeklyActivity.this, "Long pressed event: " + event.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.week_today_button:
+                break;
+            case R.id.week_year_button:
+                break;
+            case R.id.week_week_button:
+                break;
+            case R.id.week_add_button:
+                Intent event = new Intent(WeeklyActivity.this, EventEdit.class);
+                startActivity(event);
+                break;
+        }
     }
 }
