@@ -98,8 +98,10 @@ public class Scheduler {
     // check out a given event is between 'start' and 'end'
     private boolean _CheckBetween(CalendarEvent e, Calendar start, Calendar end) {
         // no repeat
-        if(e.repeat() == CalendarEvent.REPEAT_NO)
-            return e.start().after(start) && e.end().before(end);
+        if(e.repeat() == CalendarEvent.REPEAT_NO) {
+            return (e.start().after(start) && e.start().before(end)) ||
+                    (e.end().after(start) && e.end().before(end));
+        }
 
 
         // algorithm
@@ -107,10 +109,9 @@ public class Scheduler {
         // dt : time in milliseconds
         //
         // find some integer i satisfying two equations below
-        // s1 <= s2 + dt * i, e1 >= e2 + dt * i
-        else {
-            long dt = 1, ds, de;
-            int m, n;
+        // s1 <= s2 + dt * i < e1 or s1 < e2 + dt * i <= e1
+        else if(!e.start().after(end)) {
+            double dt = 1;
 
             switch(e.repeat()) {
                 case CalendarEvent.REPEAT_DAY: // every day
@@ -126,13 +127,22 @@ public class Scheduler {
                     break;
             }
 
-            ds = start.getTimeInMillis() - e.start().getTimeInMillis();
-            de = end.getTimeInMillis() - e.end().getTimeInMillis();
+            double lower = (double)(start.getTimeInMillis() - e.start().getTimeInMillis()) / dt;
+            double upper = (double)(end.getTimeInMillis() - e.start().getTimeInMillis()) / dt;
+            int m = (int)Math.ceil(lower);
+            int n = (int)Math.floor(upper);
 
-            m = (int)Math.ceil((double)ds / (double)dt);
-            n = (int)Math.floor((double)de / (double)dt);
+            if(m <= n)
+                return true;
 
-            return m <= n;
+            lower = (double)(start.getTimeInMillis() - e.end().getTimeInMillis()) / dt;
+            upper = (double)(end.getTimeInMillis() - e.end().getTimeInMillis()) / dt;
+            m = (int)Math.ceil(lower);
+            n = (int)Math.floor(upper);
+
+            return (m <= n);
         }
+        else
+            return false;
     }
 }
