@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/EventEditLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:baselineAligned="false"
+	android:orientation="vertical"
+    android:background="#fff">
+	<LinearLayout
+		android:id="@+id/EventEditBelowTitleLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:orientation="horizontal" >
+		<!-- Colour bar -->
+		<LinearLayout
+			android:id="@+id/EventEditColourBar"
+			android:layout_width="13sp"
+			android:layout_height="fill_parent"
+			android:background="#704080f0"
+            android:orientation="horizontal" />
+		<ScrollView
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:fillViewport="true" >
+			<RelativeLayout
+				android:id="@+id/EventEditDataLayout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical" >
+				<!-- Event Name -->
+				<EditText
+					android:id="@+id/EventName"
+					android:layout_width="fill_parent"
+					android:layout_height="48sp"
+					android:layout_margin="0dp"
+					android:hint="@string/event_name_hint"
+					android:inputType="textCapSentences|textAutoCorrect|textEmailSubject"
+					android:paddingLeft="2dp"
+					android:singleLine="true"
+					android:textSize="26sp" />
+				<!-- Outer Layout for from/to -->
+				<RelativeLayout
+					android:id="@+id/EventFromToLayout"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventName"
+					android:orientation="vertical" >
+					<!-- From content -->
+					<LinearLayout
+						android:id="@+id/EventFromContent"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="3sp" >
+						<TextView
+							android:id="@+id/EventFromLabel"
+							style="@style/event_view_label"
+							android:layout_width="70dp"
+							android:layout_height="fill_parent"
+							android:gravity="center_vertical"
+							android:text="@string/Start" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="5" >
+                            <EditText
+                                android:id="@+id/editStartText"
+                                android:layout_width="250dp"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_height="wrap_content"
+                                android:editable="true" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="3" >
+                            <ImageButton
+                                android:id="@+id/imageStartButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/editText"
+                                android:layout_toRightOf="@+id/editText"
+                                android:contentDescription="@string/selectStartDate"
+                                android:cropToPadding="true"
+                                android:src="@drawable/calendar_icon" />
+						</LinearLayout>
+					</LinearLayout>
+					<!-- Until Content -->
+					<LinearLayout
+						android:id="@+id/EventUntilContent"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/EventFromContent"
+						android:paddingBottom="3sp" >
+						<!-- Until Label -->
+						<TextView
+							android:id="@+id/EventUntilLabel"
+							style="@style/event_view_label"
+							android:layout_width="70dp"
+							android:layout_height="wrap_content"
+							android:text="@string/End" />
+						<LinearLayout
+							android:layout_width="0dip"
+							android:layout_height="fill_parent"
+							android:layout_marginRight="5sp"
+							android:layout_weight="5" >
+                            <EditText
+                                android:id="@+id/editEndText"
+                                android:layout_width="250dp"
+                                android:layout_marginTop="50dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="5sp"
+                            android:layout_weight="3" >
+                            <ImageButton
+                                android:id="@+id/imageEndButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignBottom="@+id/editText"
+                                android:layout_toRightOf="@+id/editText"
+                                android:contentDescription="@string/selectEndDate"
+                                android:cropToPadding="true"
+                                android:src="@drawable/calendar_icon" />
+						</LinearLayout>
+					</LinearLayout>
+				</RelativeLayout>
+				<!-- Location Label and Button -->
+				<RelativeLayout
+					android:id="@+id/EventLocationLayout"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventFromToLayout" >
+					<!-- Location Label -->
+					<TextView
+						android:id="@+id/EventLocationLabel"
+						style="@style/event_view_label"
+						android:layout_width="70dp"
+						android:layout_height="fill_parent"
+						android:text="@string/Location" />
+					<EditText
+						android:id="@+id/EventLocationContent"
+						style="@style/event_view_content"
+						android:layout_width="fill_parent"
+						android:layout_height="64sp"
+                        android:gravity="top"
+						android:inputType="textCapSentences|textAutoCorrect|textPostalAddress|textMultiLine"
+						android:paddingBottom="0px"
+                        android:layout_toRightOf="@+id/EventLocationLabel"
+                        android:layout_toEndOf="@+id/EventLocationLabel" />
+				</RelativeLayout>
+				<!-- End location label and button -->
+				<RelativeLayout
+					android:id="@+id/EventNotesLayout"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventFromToLayout"
+					android:paddingBottom="2sp"
+					android:paddingTop="40sp" >
+					<!-- Notes label and content -->
+					<TextView
+						android:id="@+id/EventNotesLabel"
+						style="@style/event_view_label"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/NotesPrompt" />
+					<EditText
+						android:id="@+id/EventNotesContent"
+						style="@style/event_view_content"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/EventNotesLabel"
+						android:gravity="top"
+						android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+						android:minLines="4" />
+				</RelativeLayout>
+			</RelativeLayout>
+		</ScrollView>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/button_layout"
+		android:layout_width="fill_parent"
+		android:layout_height="36sp"
+        android:background="#59dbe0"
+		android:layout_gravity="bottom"
+		android:baselineAligned="false" >
+		<!-- Colour bar -->
+		<LinearLayout
+			android:id="@+id/EventEditColourBarBottom"
+			android:layout_width="13sp"
+			android:layout_height="fill_parent"
+			android:background="#704080f0"
+            android:orientation="horizontal" />
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="3"
+			android:gravity="center"
+			android:padding="0sp" >
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<Button
+					android:id="@+id/event_apply_button"
+					style="@style/themed_bottom_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal"
+					android:padding="0sp"
+					android:text="@string/Save"
+					android:width="110sp" />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="3"
+            android:background="#59dbe0"
+			android:gravity="center"
+			android:padding="0sp" >
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+				<Button
+					android:id="@+id/event_cancel_button"
+					style="@style/themed_bottom_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal"
+					android:padding="0sp"
+					android:text="@string/Cancel"
+					android:width="110sp" />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

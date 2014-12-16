@@ -20,4 +20,23 @@
     <string name="MonthlyView">Month view</string>
     <string name="DailyView">Day view</string>
 
+    <string name="Today">Today</string>
+    <string name="Year">Year</string>
+    <string name="Month">Month</string>
+    <string name="Week">Week</string>
+    <string name="plus">+</string>
+
+    <string name="placeholderDateAndTime">7:00pm, 15 December 2014</string>
+    <string name="event_name_hint">Title of event</string>
+    <string name="event_location_hint">The location of the event</string>
+    <string name="event_notes_hint">Detailed event description</string>
+    <string name="Start">Start</string>
+    <string name="End">End</string>
+    <string name="Location">Location:</string>
+    <string name="NotesPrompt">Description:</string>
+    <string name="Save">Save</string>
+    <string name="Cancel">Cancel</string>
+
+    <string name="selectStartDate">Select Start Date</string>
+    <string name="selectEndDate">Select End Date</string>
 </resources>
