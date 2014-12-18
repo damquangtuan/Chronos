@@ -2,6 +2,7 @@ package com.javaclass.androidcalendar;
 
 import java.util.Calendar;
 
+import Database.SQLite.model.Event;
 /**
  * Created by Raquib-ul-Alam Kanak on 7/21/2014.
  * Website: http://april-shower.com
@@ -64,6 +65,43 @@ public class WeekViewEvent {
         this.mEndTime = endTime;
     }
 
+    public WeekViewEvent(Event event) {
+        this.mId = event.getEventId();
+        this.mName = event.getName();
+
+
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(event.getStart());
+        int startYear = calendar.get(Calendar.YEAR);
+        int startMonth = calendar.get(Calendar.MONTH);
+        int startDay = calendar.get(Calendar.DAY_OF_MONTH);
+        int startHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int startMinute = calendar.get(Calendar.MINUTE);
+
+
+        this.mStartTime = Calendar.getInstance();
+
+        this.mStartTime.set(Calendar.YEAR, startYear);
+        this.mStartTime.set(Calendar.MONTH, startMonth);
+        this.mStartTime.set(Calendar.DAY_OF_MONTH, startDay);
+        this.mStartTime.set(Calendar.HOUR_OF_DAY, startHour);
+        this.mStartTime.set(Calendar.MINUTE, startMinute);
+
+        calendar.setTimeInMillis(event.getEnd());
+        int endYear = calendar.get(Calendar.YEAR);
+        int endMonth = calendar.get(Calendar.MONTH);
+        int endDay = calendar.get(Calendar.DAY_OF_MONTH);
+        int endHour = calendar.get(Calendar.HOUR_OF_DAY);
+        int endMinute = calendar.get(Calendar.MINUTE);
+
+        this.mEndTime = Calendar.getInstance();
+        this.mEndTime.set(Calendar.YEAR, endYear);
+        this.mEndTime.set(Calendar.MONTH, endMonth);
+        this.mEndTime.set(Calendar.DAY_OF_MONTH, endDay);
+        this.mEndTime.set(Calendar.HOUR_OF_DAY, endHour);
+        this.mEndTime.set(Calendar.MINUTE, endMinute);
+    }
 
     public Calendar getStartTime() {
         return mStartTime;

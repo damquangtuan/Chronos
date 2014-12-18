@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import Database.SQLite.MySQLiteHelper;
+import Database.SQLite.model.Event;
+
 /**
  * Created by root on 14. 12. 11.
  */
@@ -28,11 +31,13 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
     private static final int TYPE_WEEK_VIEW = 3;
     private int mWeekViewType = TYPE_THREE_DAY_VIEW;
     private WeekView mWeekView;
+    private MySQLiteHelper db = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weekly);
+        db = new MySQLiteHelper(this);
 
         Button addEvent = (Button) findViewById(R.id.week_add_button);
         addEvent.setOnClickListener(this);
@@ -110,8 +115,15 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
 
         // Populate the week view with some events.
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
+        List<Event> eventList = db.getAllEvents();
+        for(int i = 0; i <= eventList.size() - 1; i++) {
+            Event event = eventList.get(i);
+            WeekViewEvent weeklyEvent = new WeekViewEvent(event);
+            weeklyEvent.setColor(getResources().getColor(R.color.event_color_02));
+            events.add(weeklyEvent);
+        }
 
-        Calendar startTime = Calendar.getInstance();
+        /*Calendar startTime = Calendar.getInstance();
         startTime.set(Calendar.HOUR_OF_DAY, 3);
         startTime.set(Calendar.MINUTE, 0);
         startTime.set(Calendar.MONTH, newMonth-1);
@@ -207,7 +219,7 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         endTime.add(Calendar.HOUR_OF_DAY, 3);
         event = new WeekViewEvent(5, getEventTitle(startTime), startTime, endTime);
         event.setColor(getResources().getColor(R.color.event_color_02));
-        events.add(event);
+        events.add(event);*/
 
         return events;
     }

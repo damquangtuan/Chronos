@@ -32,6 +32,8 @@
     <string name="event_notes_hint">Detailed event description</string>
     <string name="Start">Start</string>
     <string name="End">End</string>
+    <string name="Repeat">Repeat</string>
+    <string name="Color">Color</string>
     <string name="Location">Location:</string>
     <string name="NotesPrompt">Description:</string>
     <string name="Save">Save</string>
@@ -39,4 +41,18 @@
 
     <string name="selectStartDate">Select Start Date</string>
     <string name="selectEndDate">Select End Date</string>
+
+    <string-array name = "repeat_array">
+        <item>No Repeat</item>
+        <item>Daily Repeat</item>
+        <item>Weekly Repeat</item>
+    </string-array>
+
+    <string-array name = "color_array">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Purple</item>
+        <item>Green</item>
+    </string-array>
 </resources>

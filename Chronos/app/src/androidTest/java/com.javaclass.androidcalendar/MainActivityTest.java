@@ -12,7 +12,9 @@ public class MainActivityTest extends TestCase {
     @Test
     public void testThatSucceeds(){
         // all OK
-        assert true;
+        int a = 1;
+        int b = 1;
+        assertEquals(a, b);
     }
 
     @Test

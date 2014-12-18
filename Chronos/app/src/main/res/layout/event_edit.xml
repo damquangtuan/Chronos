@@ -52,42 +52,69 @@
 						android:layout_width="fill_parent"
 						android:layout_height="wrap_content"
 						android:paddingBottom="3sp" >
+                        <!-- Start from -->
 						<TextView
 							android:id="@+id/EventFromLabel"
 							style="@style/event_view_label"
-							android:layout_width="70dp"
+							android:layout_width="60dp"
 							android:layout_height="fill_parent"
 							android:gravity="center_vertical"
 							android:text="@string/Start" />
                         <LinearLayout
                             android:layout_width="0dip"
                             android:layout_height="fill_parent"
-                            android:layout_marginRight="5sp"
-                            android:layout_weight="5" >
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="3.5" >
                             <EditText
                                 android:id="@+id/editStartText"
-                                android:layout_width="250dp"
-                                android:layout_marginTop="50dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
                                 android:layout_height="wrap_content"
-                                android:editable="true" >
+                                android:editable="false" >
                             </EditText>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="0dip"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="5sp"
-                            android:layout_weight="3" >
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1" >
                             <ImageButton
                                 android:id="@+id/imageStartButton"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="fill_parent"
                                 android:layout_alignBottom="@+id/editText"
                                 android:layout_toRightOf="@+id/editText"
                                 android:contentDescription="@string/selectStartDate"
                                 android:cropToPadding="true"
                                 android:src="@drawable/calendar_icon" />
 						</LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="2.3" >
+                            <EditText
+                                android:id="@+id/editStartTime"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1.8" >
+                            <Button
+                                android:id="@+id/btnTimeStart"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:editable="false" >
+                            </Button>
+                        </LinearLayout>
 					</LinearLayout>
 					<!-- Until Content -->
 					<LinearLayout
@@ -100,19 +127,18 @@
 						<TextView
 							android:id="@+id/EventUntilLabel"
 							style="@style/event_view_label"
-							android:layout_width="70dp"
+							android:layout_width="60dp"
 							android:layout_height="wrap_content"
 							android:text="@string/End" />
 						<LinearLayout
 							android:layout_width="0dip"
 							android:layout_height="fill_parent"
-							android:layout_marginRight="5sp"
-							android:layout_weight="5" >
+							android:layout_marginRight="0sp"
+							android:layout_weight="3.5" >
                             <EditText
                                 android:id="@+id/editEndText"
-                                android:layout_width="250dp"
-                                android:layout_marginTop="50dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
                                 android:layout_height="wrap_content"
                                 android:editable="false" >
                             </EditText>
@@ -120,19 +146,103 @@
                         <LinearLayout
                             android:layout_width="0dip"
                             android:layout_height="wrap_content"
-                            android:layout_marginRight="5sp"
-                            android:layout_weight="3" >
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1" >
                             <ImageButton
                                 android:id="@+id/imageEndButton"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
+                                android:layout_height="fill_parent"
                                 android:layout_alignBottom="@+id/editText"
                                 android:layout_toRightOf="@+id/editText"
                                 android:contentDescription="@string/selectEndDate"
                                 android:cropToPadding="true"
                                 android:src="@drawable/calendar_icon" />
 						</LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="2.3" >
+                            <EditText
+                                android:id="@+id/editEndTime"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1.8" >
+                            <Button
+                                android:id="@+id/btnTimeEnd"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:editable="false" >
+                            </Button>
+                        </LinearLayout>
 					</LinearLayout>
+
+                    <!-- Repeater Label and Button -->
+                    <LinearLayout
+                        android:id="@+id/EventRepeatSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventUntilContent"
+                        android:paddingBottom="3sp" >
+
+                        <TextView
+                            android:id="@+id/EventRepeatText"
+                            style="@style/event_view_label"
+                            android:layout_width="60dp"
+                            android:layout_height="30sp"
+                            android:text="@string/Repeat" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="5" >
+                            <Spinner
+                                android:id="@+id/repeat_option"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                android:layout_marginLeft="0dp">
+                            </Spinner>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- Color Label and Button -->
+                    <LinearLayout
+                        android:id="@+id/EventColorSpinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventRepeatSpinner"
+                        android:paddingBottom="3sp" >
+
+                        <TextView
+                            android:id="@+id/EventColorText"
+                            style="@style/event_view_label"
+                            android:layout_width="60dp"
+                            android:layout_height="30sp"
+                            android:text="@string/Color" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="5" >
+                            <Spinner
+                                android:id="@+id/color_option"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                android:layout_marginLeft="0dp">
+                            </Spinner>
+                        </LinearLayout>
+                    </LinearLayout>
 				</RelativeLayout>
 				<!-- Location Label and Button -->
 				<RelativeLayout
@@ -144,28 +254,25 @@
 					<TextView
 						android:id="@+id/EventLocationLabel"
 						style="@style/event_view_label"
-						android:layout_width="70dp"
-						android:layout_height="fill_parent"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
 						android:text="@string/Location" />
 					<EditText
 						android:id="@+id/EventLocationContent"
 						style="@style/event_view_content"
 						android:layout_width="fill_parent"
-						android:layout_height="64sp"
+						android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventLocationLabel"
                         android:gravity="top"
-						android:inputType="textCapSentences|textAutoCorrect|textPostalAddress|textMultiLine"
-						android:paddingBottom="0px"
-                        android:layout_toRightOf="@+id/EventLocationLabel"
-                        android:layout_toEndOf="@+id/EventLocationLabel" />
+						android:inputType="textCapSentences|textAutoCorrect|textPostalAddress|textMultiLine"/>
 				</RelativeLayout>
 				<!-- End location label and button -->
 				<RelativeLayout
 					android:id="@+id/EventNotesLayout"
 					android:layout_width="fill_parent"
 					android:layout_height="wrap_content"
-					android:layout_below="@+id/EventFromToLayout"
-					android:paddingBottom="2sp"
-					android:paddingTop="40sp" >
+					android:layout_below="@+id/EventLocationLayout"
+					android:paddingBottom="3sp">
 					<!-- Notes label and content -->
 					<TextView
 						android:id="@+id/EventNotesLabel"
@@ -181,7 +288,7 @@
 						android:layout_below="@+id/EventNotesLabel"
 						android:gravity="top"
 						android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
-						android:minLines="4" />
+						android:minLines="5" />
 				</RelativeLayout>
 			</RelativeLayout>
 		</ScrollView>
@@ -190,7 +297,7 @@
 		android:id="@+id/button_layout"
 		android:layout_width="fill_parent"
 		android:layout_height="36sp"
-        android:background="#59dbe0"
+        android:background="#1848adff"
 		android:layout_gravity="bottom"
 		android:baselineAligned="false" >
 		<!-- Colour bar -->
@@ -210,7 +317,7 @@
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content">
 				<Button
-					android:id="@+id/event_apply_button"
+					android:id="@+id/event_save_button"
 					style="@style/themed_bottom_button"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
@@ -224,7 +331,7 @@
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
 			android:layout_weight="3"
-            android:background="#59dbe0"
+            android:background="#1848adff"
 			android:gravity="center"
 			android:padding="0sp" >
 			<LinearLayout

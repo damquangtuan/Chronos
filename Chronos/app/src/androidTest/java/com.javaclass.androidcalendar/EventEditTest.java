@@ -1,5 +1,6 @@
 package com.javaclass.androidcalendar;
 
+import static org.junit.Assert.assertEquals;
 import junit.framework.TestCase;
 import android.app.Activity;
 import android.test.ActivityInstrumentationTestCase2;
