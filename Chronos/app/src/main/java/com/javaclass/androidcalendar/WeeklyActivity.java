@@ -119,7 +119,17 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         for(int i = 0; i <= eventList.size() - 1; i++) {
             Event event = eventList.get(i);
             WeekViewEvent weeklyEvent = new WeekViewEvent(event);
-            weeklyEvent.setColor(getResources().getColor(R.color.event_color_02));
+            if(event.getColor() == 0) {
+                weeklyEvent.setColor(getResources().getColor(R.color.event_color_01));
+            } else if (event.getColor() == 1) {
+                weeklyEvent.setColor(getResources().getColor(R.color.event_color_02));
+            } else if (event.getColor() == 2) {
+                weeklyEvent.setColor(getResources().getColor(R.color.event_color_03));
+            } else if (event.getColor() == 3) {
+                weeklyEvent.setColor(getResources().getColor(R.color.event_color_04));
+            } else if (event.getColor() == 4) {
+                weeklyEvent.setColor(getResources().getColor(R.color.event_color_05));
+            }
             events.add(weeklyEvent);
         }
 

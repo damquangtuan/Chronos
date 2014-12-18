@@ -128,6 +128,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
     private EditText editLocation;
     private EditText editDescription;
     private int repeatOption = 0;
+    private int colorOption = 0;
 
 	private LinearLayout sidebar;
 	private LinearLayout sidebarBottom;
@@ -178,7 +179,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.event_edit);
         db = new MySQLiteHelper(this);
-        db.deleteAll();
+        //db.deleteAll();
 		//getEventAction();
 		this.loadLayout();
 	}
@@ -284,7 +285,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
         ArrayAdapter<CharSequence> colorAdapter = ArrayAdapter.createFromResource(this,
                 R.array.color_array, android.R.layout.simple_spinner_item);
         // Specify the layout to use when the list of choices appears
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        colorAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         // Apply the adapter to the spinner
         colorSpinner.setAdapter(colorAdapter);
         colorSpinner.setOnItemSelectedListener(this);
@@ -435,7 +436,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
                                int pos, long id) {
         // An item was selected. You can retrieve the selected item using
         // parent.getItemAtPosition(pos).toString();
-        repeatOption = pos;
+        //repeatOption = pos;
     }
 
     @Override
@@ -473,6 +474,30 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
             editLocation = (EditText) findViewById(R.id.EventLocationContent);
             editDescription = (EditText) findViewById(R.id.EventNotesContent);
+
+            //get repeat option
+            String repeat_str = repeatSpinner.getSelectedItem().toString();
+            if(repeat_str == "No Repeat") {
+                repeatOption = 0;
+            } else if (repeat_str == "Daily Repeat") {
+                repeatOption = 1;
+            } else if (repeat_str == "Weekly Repeat") {
+                repeatOption = 2;
+            }
+
+            //get color option
+            String color_str = colorSpinner.getSelectedItem().toString();
+            if(color_str == "Red") {
+                colorOption = 0;
+            } else if (color_str == "Blue") {
+                colorOption = 1;
+            } else if (color_str == "Yellow") {
+                colorOption = 2;
+            } else if (color_str == "Purple") {
+                colorOption = 3;
+            } else if (color_str == "Green") {
+                colorOption = 4;
+            }
             //saving event
 
             Event event = new Event();
@@ -492,6 +517,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
             event.setStart(start);
             event.setEnd(end);
             event.setRepeat(repeatOption);
+            event.setColor(colorOption);
 
             db.addEvent(event);
 		}
