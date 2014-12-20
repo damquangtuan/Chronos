@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+
+import Database.SQLite.model.Event;
 
 
 public class MonthlyActivity extends ActionBarActivity
@@ -19,6 +26,7 @@ public class MonthlyActivity extends ActionBarActivity
 
     private Button month_year_btn;
     private Button new_event_btn;
+    private ListView event_list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +45,9 @@ public class MonthlyActivity extends ActionBarActivity
 
         new_event_btn = (Button)findViewById(R.id.new_event_btn);
         new_event_btn.setOnClickListener(this);
+
+        event_list_view = (ListView)findViewById(R.id.event_list_view);
+
 
         setContentView(R.layout.activity_monthly);
     }
@@ -67,6 +78,7 @@ public class MonthlyActivity extends ActionBarActivity
     @Override
     public void onClick(View view) {
         if(view.equals(month_year_btn)) {
+            // show a picker dialog
             // let the picker selected with 'month_year' by default
             DatePickerDialog dialog = new DatePickerDialog(this, this,
                     month_year.get(Calendar.YEAR), month_year.get(Calendar.MONTH), 1);
@@ -92,6 +104,11 @@ public class MonthlyActivity extends ActionBarActivity
 
         // show selected month & year
         month_year_btn.setText(month_year_str);
+
+        //
+        // show a list of events of the given month and year using 'ListView'
+        //
+        List<Event> event_list = null; // must be changed to something; not null
     }
 
 }
