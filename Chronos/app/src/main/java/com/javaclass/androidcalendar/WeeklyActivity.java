@@ -55,6 +55,12 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         mWeekView.setEventLongPressListener(this);
     }
 
+    @Override
+    protected void onResume() {
+
+        super.onResume();
+        this.onCreate(null);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

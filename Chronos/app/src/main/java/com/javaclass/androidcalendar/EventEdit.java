@@ -477,25 +477,25 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
             //get repeat option
             String repeat_str = repeatSpinner.getSelectedItem().toString();
-            if(repeat_str == "No Repeat") {
+            if(repeat_str.equals("No Repeat")) {
                 repeatOption = 0;
-            } else if (repeat_str == "Daily Repeat") {
+            } else if (repeat_str.equals("Daily Repeat")) {
                 repeatOption = 1;
-            } else if (repeat_str == "Weekly Repeat") {
+            } else if (repeat_str.equals("Weekly Repeat")) {
                 repeatOption = 2;
             }
 
             //get color option
             String color_str = colorSpinner.getSelectedItem().toString();
-            if(color_str == "Red") {
+            if(color_str.equals("Red")) {
                 colorOption = 0;
-            } else if (color_str == "Blue") {
+            } else if (color_str.equals("Blue")) {
                 colorOption = 1;
-            } else if (color_str == "Yellow") {
+            } else if (color_str.equals("Yellow")) {
                 colorOption = 2;
-            } else if (color_str == "Purple") {
+            } else if (color_str.equals("Purple")) {
                 colorOption = 3;
-            } else if (color_str == "Green") {
+            } else if (color_str.equals("Green")) {
                 colorOption = 4;
             }
             //saving event

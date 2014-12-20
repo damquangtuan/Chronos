@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">AndroidCalendar</string>
+    <string name="app_name">Chronos</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -20,10 +20,10 @@
     <string name="MonthlyView">Month view</string>
     <string name="DailyView">Day view</string>
 
-    <string name="Today">Today</string>
-    <string name="Year">Year</string>
-    <string name="Month">Month</string>
-    <string name="Week">Week</string>
+    <string name="Today">Mode</string>
+    <string name="Year">Event</string>
+    <string name="Month">Function</string>
+    <string name="Week">Setting</string>
     <string name="plus">+</string>
 
     <string name="placeholderDateAndTime">7:00pm, 15 December 2014</string>
