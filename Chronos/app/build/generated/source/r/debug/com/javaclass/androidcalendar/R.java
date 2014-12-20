@@ -16,6 +16,10 @@ public final class R {
         public static final int abc_slide_out_bottom=0x7f040004;
         public static final int abc_slide_out_top=0x7f040005;
     }
+    public static final class array {
+        public static final int color_array=0x7f050000;
+        public static final int repeat_array=0x7f050001;
+    }
     public static final class attr {
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
@@ -181,10 +185,40 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int buttonBarStyle=0x7f01001c;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int columnGap=0x7f010074;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int customNavigationLayout=0x7f01004a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int dayBackgroundColor=0x7f010078;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>length_short</code></td><td>1</td><td></td></tr>
+<tr><td><code>length_long</code></td><td>2</td><td></td></tr>
+</table>
+         */
+        public static final int dayNameLength=0x7f010080;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -244,10 +278,112 @@ theme attribute (in the form
 containing a value of this type.
          */
         public static final int dropdownListPreferredItemHeight=0x7f010067;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int eventMarginVertical=0x7f010082;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int eventPadding=0x7f01007e;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int eventTextColor=0x7f01007d;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int eventTextSize=0x7f010071;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int expandActivityOverflowButtonDrawable=0x7f010058;
+        /** <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>sunday</code></td><td>1</td><td></td></tr>
+<tr><td><code>monday</code></td><td>2</td><td></td></tr>
+<tr><td><code>tuesday</code></td><td>3</td><td></td></tr>
+<tr><td><code>wednesday</code></td><td>4</td><td></td></tr>
+<tr><td><code>thursday</code></td><td>5</td><td></td></tr>
+<tr><td><code>friday</code></td><td>6</td><td></td></tr>
+<tr><td><code>saturday</code></td><td>7</td><td></td></tr>
+</table>
+         */
+        public static final int firstDayOfWeek=0x7f01006e;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int headerColumnBackground=0x7f01007f;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int headerColumnPadding=0x7f010072;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int headerColumnTextColor=0x7f010075;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int headerRowBackgroundColor=0x7f010077;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int headerRowPadding=0x7f010073;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -266,6 +402,35 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int homeLayout=0x7f01004b;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int hourHeight=0x7f01006f;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int hourSeparatorColor=0x7f010079;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int hourSeparatorHeight=0x7f01007c;
         /** <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
@@ -382,6 +547,24 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 </table>
          */
         public static final int navigationMode=0x7f01003f;
+        /** <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int noOfVisibleDays=0x7f010076;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int overlappingEventGap=0x7f010081;
         /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
 Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
 in (inches), mm (millimeters).
@@ -597,6 +780,16 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 "<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
          */
         public static final int textColorSearchUrl=0x7f01003d;
+        /** <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int textSize=0x7f010070;
         /** <p>Must be a string value, using '\\;' to escape characters such as '\\n' or '\\uxxxx' for a unicode character.
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -609,6 +802,24 @@ containing a value of this type.
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
          */
         public static final int titleTextStyle=0x7f010042;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int todayBackgroundColor=0x7f01007a;
+        /** <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+         */
+        public static final int todayHeaderTextColor=0x7f01007b;
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
 <p>This may also be a reference to a resource (in the form
 "<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
@@ -687,47 +898,62 @@ containing a value of this type.
         public static final int windowSplitActionBar=0x7f010052;
     }
     public static final class bool {
-        public static final int abc_action_bar_embed_tabs_pre_jb=0x7f050000;
-        public static final int abc_action_bar_expanded_action_views_exclusive=0x7f050001;
-        public static final int abc_config_actionMenuItemAllCaps=0x7f050002;
-        public static final int abc_config_allowActionMenuItemTextWithIcon=0x7f050003;
-        public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f050004;
-        public static final int abc_split_action_bar_is_narrow=0x7f050005;
+        public static final int abc_action_bar_embed_tabs_pre_jb=0x7f060000;
+        public static final int abc_action_bar_expanded_action_views_exclusive=0x7f060001;
+        public static final int abc_config_actionMenuItemAllCaps=0x7f060002;
+        public static final int abc_config_allowActionMenuItemTextWithIcon=0x7f060003;
+        public static final int abc_config_showMenuShortcutsWhenKeyboardPresent=0x7f060004;
+        public static final int abc_split_action_bar_is_narrow=0x7f060005;
     }
     public static final class color {
-        public static final int abc_search_url_text_holo=0x7f060007;
-        public static final int abc_search_url_text_normal=0x7f060000;
-        public static final int abc_search_url_text_pressed=0x7f060001;
-        public static final int abc_search_url_text_selected=0x7f060002;
-        public static final int darkgreen=0x7f060003;
-        public static final int green=0x7f060004;
-        public static final int grey=0x7f060005;
-        public static final int transparent=0x7f060006;
+        public static final int abc_search_url_text_holo=0x7f070010;
+        public static final int abc_search_url_text_normal=0x7f070000;
+        public static final int abc_search_url_text_pressed=0x7f070001;
+        public static final int abc_search_url_text_selected=0x7f070002;
+        public static final int bottom_bg=0x7f070003;
+        public static final int darkgreen=0x7f070004;
+        public static final int date_number_text_color=0x7f070011;
+        public static final int event_color_01=0x7f070005;
+        public static final int event_color_02=0x7f070006;
+        public static final int event_color_03=0x7f070007;
+        public static final int event_color_04=0x7f070008;
+        public static final int event_color_05=0x7f070009;
+        public static final int green=0x7f07000a;
+        public static final int grey=0x7f07000b;
+        public static final int themed_button_colour=0x7f07000c;
+        public static final int themed_text_dark=0x7f07000d;
+        public static final int themed_text_light=0x7f07000e;
+        public static final int transparent=0x7f07000f;
     }
     public static final class dimen {
-        public static final int abc_action_bar_default_height=0x7f080000;
-        public static final int abc_action_bar_icon_vertical_padding=0x7f080001;
-        public static final int abc_action_bar_progress_bar_size=0x7f080002;
-        public static final int abc_action_bar_stacked_max_height=0x7f080003;
-        public static final int abc_action_bar_stacked_tab_max_width=0x7f080004;
-        public static final int abc_action_bar_subtitle_bottom_margin=0x7f080005;
-        public static final int abc_action_bar_subtitle_text_size=0x7f080006;
-        public static final int abc_action_bar_subtitle_top_margin=0x7f080007;
-        public static final int abc_action_bar_title_text_size=0x7f080008;
-        public static final int abc_action_button_min_width=0x7f080009;
-        public static final int abc_config_prefDialogWidth=0x7f08000a;
-        public static final int abc_dropdownitem_icon_width=0x7f08000b;
-        public static final int abc_dropdownitem_text_padding_left=0x7f08000c;
-        public static final int abc_dropdownitem_text_padding_right=0x7f08000d;
-        public static final int abc_panel_menu_list_width=0x7f08000e;
-        public static final int abc_search_view_preferred_width=0x7f08000f;
-        public static final int abc_search_view_text_min_width=0x7f080010;
-        public static final int activity_horizontal_margin=0x7f080011;
-        public static final int activity_vertical_margin=0x7f080012;
-        public static final int dialog_fixed_height_major=0x7f080013;
-        public static final int dialog_fixed_height_minor=0x7f080014;
-        public static final int dialog_fixed_width_major=0x7f080015;
-        public static final int dialog_fixed_width_minor=0x7f080016;
+        public static final int abc_action_bar_default_height=0x7f090000;
+        public static final int abc_action_bar_icon_vertical_padding=0x7f090001;
+        public static final int abc_action_bar_progress_bar_size=0x7f090002;
+        public static final int abc_action_bar_stacked_max_height=0x7f090003;
+        public static final int abc_action_bar_stacked_tab_max_width=0x7f090004;
+        public static final int abc_action_bar_subtitle_bottom_margin=0x7f090005;
+        public static final int abc_action_bar_subtitle_text_size=0x7f090006;
+        public static final int abc_action_bar_subtitle_top_margin=0x7f090007;
+        public static final int abc_action_bar_title_text_size=0x7f090008;
+        public static final int abc_action_button_min_width=0x7f090009;
+        public static final int abc_config_prefDialogWidth=0x7f09000a;
+        public static final int abc_dropdownitem_icon_width=0x7f09000b;
+        public static final int abc_dropdownitem_text_padding_left=0x7f09000c;
+        public static final int abc_dropdownitem_text_padding_right=0x7f09000d;
+        public static final int abc_panel_menu_list_width=0x7f09000e;
+        public static final int abc_search_view_preferred_width=0x7f09000f;
+        public static final int abc_search_view_text_min_width=0x7f090010;
+        public static final int activity_horizontal_margin=0x7f090011;
+        public static final int activity_vertical_margin=0x7f090012;
+        public static final int day_margin=0x7f090013;
+        public static final int dialog_fixed_height_major=0x7f090014;
+        public static final int dialog_fixed_height_minor=0x7f090015;
+        public static final int dialog_fixed_width_major=0x7f090016;
+        public static final int dialog_fixed_width_minor=0x7f090017;
+        public static final int first_day_margin=0x7f090018;
+        public static final int min_cell_height=0x7f090019;
+        public static final int min_cell_width=0x7f09001a;
+        public static final int text_height_width=0x7f09001b;
     }
     public static final class drawable {
         public static final int abc_ab_bottom_solid_dark_holo=0x7f020000;
@@ -817,74 +1043,156 @@ containing a value of this type.
         public static final int abc_textfield_searchview_holo_light=0x7f020054;
         public static final int abc_textfield_searchview_right_holo_dark=0x7f020055;
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
-        public static final int ic_launcher=0x7f020057;
+        public static final int blue=0x7f020057;
+        public static final int bottom_button_normal=0x7f020058;
+        public static final int calendar_icon=0x7f020059;
+        public static final int calendar_icon1=0x7f02005a;
+        public static final int date_number_background=0x7f02005b;
+        public static final int day_bg=0x7f02005c;
+        public static final int day_selected=0x7f02005d;
+        public static final int green=0x7f02005e;
+        public static final int ic_launcher=0x7f02005f;
+        public static final int navigation_next_item=0x7f020060;
+        public static final int navigation_previous_item=0x7f020061;
+        public static final int normal_day=0x7f020062;
+        public static final int orange=0x7f020063;
+        public static final int purple=0x7f020064;
+        public static final int quickcontact_badge_overlay_normal_light=0x7f020065;
+        public static final int red=0x7f020066;
+        public static final int themed_button_fg=0x7f020067;
+        public static final int titlebg=0x7f020068;
+        public static final int today=0x7f020069;
     }
     public static final class id {
-        public static final int action_bar=0x7f07001c;
-        public static final int action_bar_activity_content=0x7f070014;
-        public static final int action_bar_container=0x7f07001b;
-        public static final int action_bar_overlay_layout=0x7f07001f;
-        public static final int action_bar_root=0x7f07001a;
-        public static final int action_bar_subtitle=0x7f070023;
-        public static final int action_bar_title=0x7f070022;
-        public static final int action_context_bar=0x7f07001d;
-        public static final int action_menu_divider=0x7f070015;
-        public static final int action_menu_presenter=0x7f070016;
-        public static final int action_mode_close_button=0x7f070024;
-        public static final int action_settings=0x7f07003d;
-        public static final int activity_chooser_view_content=0x7f070025;
-        public static final int always=0x7f07000f;
-        public static final int beginning=0x7f07000a;
-        public static final int calendar=0x7f07003c;
-        public static final int checkbox=0x7f07002d;
-        public static final int collapseActionView=0x7f070011;
-        public static final int default_activity_button=0x7f070028;
-        public static final int dialog=0x7f070012;
-        public static final int disableHome=0x7f070008;
-        public static final int dropdown=0x7f070013;
-        public static final int edit_query=0x7f070030;
-        public static final int end=0x7f07000c;
-        public static final int expand_activities_button=0x7f070026;
-        public static final int expanded_menu=0x7f07002c;
-        public static final int home=0x7f070017;
-        public static final int homeAsUp=0x7f070005;
-        public static final int icon=0x7f07002a;
-        public static final int ifRoom=0x7f07000e;
-        public static final int image=0x7f070027;
-        public static final int listMode=0x7f070001;
-        public static final int list_item=0x7f070029;
-        public static final int middle=0x7f07000b;
-        public static final int never=0x7f07000d;
-        public static final int none=0x7f070009;
-        public static final int normal=0x7f070000;
-        public static final int progress_circular=0x7f070018;
-        public static final int progress_horizontal=0x7f070019;
-        public static final int radio=0x7f07002f;
-        public static final int search_badge=0x7f070032;
-        public static final int search_bar=0x7f070031;
-        public static final int search_button=0x7f070033;
-        public static final int search_close_btn=0x7f070038;
-        public static final int search_edit_frame=0x7f070034;
-        public static final int search_go_btn=0x7f07003a;
-        public static final int search_mag_icon=0x7f070035;
-        public static final int search_plate=0x7f070036;
-        public static final int search_src_text=0x7f070037;
-        public static final int search_voice_btn=0x7f07003b;
-        public static final int shortcut=0x7f07002e;
-        public static final int showCustom=0x7f070007;
-        public static final int showHome=0x7f070004;
-        public static final int showTitle=0x7f070006;
-        public static final int split_action_bar=0x7f07001e;
-        public static final int submit_area=0x7f070039;
-        public static final int tabMode=0x7f070002;
-        public static final int title=0x7f07002b;
-        public static final int top_action_bar=0x7f070020;
-        public static final int up=0x7f070021;
-        public static final int useLogo=0x7f070003;
-        public static final int withText=0x7f070010;
+        public static final int EventColorSpinner=0x7f080067;
+        public static final int EventColorText=0x7f080068;
+        public static final int EventEditBelowTitleLayout=0x7f080052;
+        public static final int EventEditColourBar=0x7f080053;
+        public static final int EventEditColourBarBottom=0x7f080071;
+        public static final int EventEditDataLayout=0x7f080054;
+        public static final int EventEditLayout=0x7f080051;
+        public static final int EventFromContent=0x7f080057;
+        public static final int EventFromLabel=0x7f080058;
+        public static final int EventFromToLayout=0x7f080056;
+        public static final int EventLocationContent=0x7f08006c;
+        public static final int EventLocationLabel=0x7f08006b;
+        public static final int EventLocationLayout=0x7f08006a;
+        public static final int EventName=0x7f080055;
+        public static final int EventNotesContent=0x7f08006f;
+        public static final int EventNotesLabel=0x7f08006e;
+        public static final int EventNotesLayout=0x7f08006d;
+        public static final int EventRepeatSpinner=0x7f080064;
+        public static final int EventRepeatText=0x7f080065;
+        public static final int EventUntilContent=0x7f08005e;
+        public static final int EventUntilLabel=0x7f08005f;
+        public static final int action_bar=0x7f080025;
+        public static final int action_bar_activity_content=0x7f08001d;
+        public static final int action_bar_container=0x7f080024;
+        public static final int action_bar_overlay_layout=0x7f080028;
+        public static final int action_bar_root=0x7f080023;
+        public static final int action_bar_subtitle=0x7f08002c;
+        public static final int action_bar_title=0x7f08002b;
+        public static final int action_context_bar=0x7f080026;
+        public static final int action_day_view=0x7f08007b;
+        public static final int action_menu_divider=0x7f08001e;
+        public static final int action_menu_presenter=0x7f08001f;
+        public static final int action_mode_close_button=0x7f08002d;
+        public static final int action_settings=0x7f080079;
+        public static final int action_three_day_view=0x7f08007c;
+        public static final int action_today=0x7f08007a;
+        public static final int action_week_view=0x7f08007d;
+        public static final int activity_chooser_view_content=0x7f08002e;
+        public static final int always=0x7f08000f;
+        public static final int beginning=0x7f08000a;
+        public static final int btnTimeEnd=0x7f080063;
+        public static final int btnTimeStart=0x7f08005d;
+        public static final int button_layout=0x7f080070;
+        public static final int calendar=0x7f080046;
+        public static final int checkbox=0x7f080036;
+        public static final int collapseActionView=0x7f080011;
+        public static final int color_option=0x7f080069;
+        public static final int default_activity_button=0x7f080031;
+        public static final int dialog=0x7f080012;
+        public static final int disableHome=0x7f080008;
+        public static final int dropdown=0x7f080013;
+        public static final int editEndText=0x7f080060;
+        public static final int editEndTime=0x7f080062;
+        public static final int editStartText=0x7f080059;
+        public static final int editStartTime=0x7f08005c;
+        public static final int editText=0x7f08005b;
+        public static final int edit_query=0x7f080039;
+        public static final int end=0x7f08000c;
+        public static final int event_cancel_button=0x7f080073;
+        public static final int event_save_button=0x7f080072;
+        public static final int expand_activities_button=0x7f08002f;
+        public static final int expanded_menu=0x7f080035;
+        public static final int footer=0x7f080074;
+        public static final int friday=0x7f080019;
+        public static final int home=0x7f080020;
+        public static final int homeAsUp=0x7f080005;
+        public static final int icon=0x7f080033;
+        public static final int ifRoom=0x7f08000e;
+        public static final int image=0x7f080030;
+        public static final int imageEndButton=0x7f080061;
+        public static final int imageStartButton=0x7f08005a;
+        public static final int imageView1=0x7f08004b;
+        public static final int imageView2=0x7f08004d;
+        public static final int imageView3=0x7f08004e;
+        public static final int imageView4=0x7f08004c;
+        public static final int imageView5=0x7f08004f;
+        public static final int imageView6=0x7f080050;
+        public static final int include=0x7f080045;
+        public static final int length_long=0x7f08001c;
+        public static final int length_short=0x7f08001b;
+        public static final int listMode=0x7f080001;
+        public static final int list_item=0x7f080032;
+        public static final int middle=0x7f08000b;
+        public static final int monday=0x7f080015;
+        public static final int never=0x7f08000d;
+        public static final int none=0x7f080009;
+        public static final int normal=0x7f080000;
+        public static final int progress_circular=0x7f080021;
+        public static final int progress_horizontal=0x7f080022;
+        public static final int radio=0x7f080038;
+        public static final int repeat_option=0x7f080066;
+        public static final int rl=0x7f080049;
+        public static final int saturday=0x7f08001a;
+        public static final int search_badge=0x7f08003b;
+        public static final int search_bar=0x7f08003a;
+        public static final int search_button=0x7f08003c;
+        public static final int search_close_btn=0x7f080041;
+        public static final int search_edit_frame=0x7f08003d;
+        public static final int search_go_btn=0x7f080043;
+        public static final int search_mag_icon=0x7f08003e;
+        public static final int search_plate=0x7f08003f;
+        public static final int search_src_text=0x7f080040;
+        public static final int search_voice_btn=0x7f080044;
+        public static final int shortcut=0x7f080037;
+        public static final int showCustom=0x7f080007;
+        public static final int showHome=0x7f080004;
+        public static final int showTitle=0x7f080006;
+        public static final int split_action_bar=0x7f080027;
+        public static final int submit_area=0x7f080042;
+        public static final int sunday=0x7f080014;
+        public static final int tabMode=0x7f080002;
+        public static final int textView1=0x7f080048;
+        public static final int thursday=0x7f080018;
+        public static final int title=0x7f080034;
+        public static final int today_frame=0x7f08004a;
+        public static final int top_action_bar=0x7f080029;
+        public static final int tuesday=0x7f080016;
+        public static final int up=0x7f08002a;
+        public static final int useLogo=0x7f080003;
+        public static final int wednesday=0x7f080017;
+        public static final int weekView=0x7f080047;
+        public static final int week_Setting_button=0x7f080077;
+        public static final int week_add_button=0x7f080078;
+        public static final int week_event_button=0x7f080076;
+        public static final int week_mode_button=0x7f080075;
+        public static final int withText=0x7f080010;
     }
     public static final class integer {
-        public static final int abc_max_action_buttons=0x7f090000;
+        public static final int abc_max_action_buttons=0x7f0a0000;
     }
     public static final class layout {
         public static final int abc_action_bar_decor=0x7f030000;
@@ -912,28 +1220,65 @@ containing a value of this type.
         public static final int abc_search_view=0x7f030016;
         public static final int abc_simple_decor=0x7f030017;
         public static final int activity_main=0x7f030018;
-        public static final int support_simple_spinner_dropdown_item=0x7f030019;
+        public static final int activity_weekly=0x7f030019;
+        public static final int day_of_week=0x7f03001a;
+        public static final int day_view=0x7f03001b;
+        public static final int event_edit=0x7f03001c;
+        public static final int footer=0x7f03001d;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001e;
     }
     public static final class menu {
-        public static final int android_calendarview=0x7f0c0000;
+        public static final int android_calendarview=0x7f0d0000;
     }
     public static final class string {
-        public static final int abc_action_bar_home_description=0x7f0a0000;
-        public static final int abc_action_bar_up_description=0x7f0a0001;
-        public static final int abc_action_menu_overflow_description=0x7f0a0002;
-        public static final int abc_action_mode_done=0x7f0a0003;
-        public static final int abc_activity_chooser_view_see_all=0x7f0a0004;
-        public static final int abc_activitychooserview_choose_application=0x7f0a0005;
-        public static final int abc_searchview_description_clear=0x7f0a0006;
-        public static final int abc_searchview_description_query=0x7f0a0007;
-        public static final int abc_searchview_description_search=0x7f0a0008;
-        public static final int abc_searchview_description_submit=0x7f0a0009;
-        public static final int abc_searchview_description_voice=0x7f0a000a;
-        public static final int abc_shareactionprovider_share_with=0x7f0a000b;
-        public static final int abc_shareactionprovider_share_with_application=0x7f0a000c;
-        public static final int action_settings=0x7f0a000d;
-        public static final int app_name=0x7f0a000e;
-        public static final int hello_world=0x7f0a000f;
+        public static final int Cancel=0x7f0b0000;
+        public static final int Color=0x7f0b0001;
+        public static final int DailyView=0x7f0b0002;
+        public static final int End=0x7f0b0003;
+        public static final int Location=0x7f0b0004;
+        public static final int Month=0x7f0b0005;
+        public static final int MonthlyView=0x7f0b0006;
+        public static final int NotesPrompt=0x7f0b0007;
+        public static final int Repeat=0x7f0b0008;
+        public static final int Save=0x7f0b0009;
+        public static final int Start=0x7f0b000a;
+        public static final int Today=0x7f0b000b;
+        public static final int Week=0x7f0b000c;
+        public static final int Year=0x7f0b000d;
+        public static final int abc_action_bar_home_description=0x7f0b000e;
+        public static final int abc_action_bar_up_description=0x7f0b000f;
+        public static final int abc_action_menu_overflow_description=0x7f0b0010;
+        public static final int abc_action_mode_done=0x7f0b0011;
+        public static final int abc_activity_chooser_view_see_all=0x7f0b0012;
+        public static final int abc_activitychooserview_choose_application=0x7f0b0013;
+        public static final int abc_searchview_description_clear=0x7f0b0014;
+        public static final int abc_searchview_description_query=0x7f0b0015;
+        public static final int abc_searchview_description_search=0x7f0b0016;
+        public static final int abc_searchview_description_submit=0x7f0b0017;
+        public static final int abc_searchview_description_voice=0x7f0b0018;
+        public static final int abc_shareactionprovider_share_with=0x7f0b0019;
+        public static final int abc_shareactionprovider_share_with_application=0x7f0b001a;
+        public static final int action_day_view=0x7f0b001b;
+        public static final int action_settings=0x7f0b001c;
+        public static final int action_three_day_view=0x7f0b001d;
+        public static final int action_today=0x7f0b001e;
+        public static final int action_week_view=0x7f0b001f;
+        public static final int app_name=0x7f0b0020;
+        public static final int event_location_hint=0x7f0b0021;
+        public static final int event_name_hint=0x7f0b0022;
+        public static final int event_notes_hint=0x7f0b0023;
+        public static final int friday=0x7f0b0024;
+        public static final int hello_world=0x7f0b0025;
+        public static final int monday=0x7f0b0026;
+        public static final int placeholderDateAndTime=0x7f0b0027;
+        public static final int plus=0x7f0b0028;
+        public static final int saturday=0x7f0b0029;
+        public static final int selectEndDate=0x7f0b002a;
+        public static final int selectStartDate=0x7f0b002b;
+        public static final int sunday=0x7f0b002c;
+        public static final int thursday=0x7f0b002d;
+        public static final int tuesday=0x7f0b002e;
+        public static final int wednesday=0x7f0b002f;
     }
     public static final class style {
         /** 
@@ -942,149 +1287,162 @@ containing a value of this type.
             backward-compatibility can go here.
         
          */
-        public static final int AppBaseTheme=0x7f0b0000;
+        public static final int AppBaseTheme=0x7f0c0000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f0b0001;
-        public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0b0002;
-        public static final int TextAppearance_AppCompat_Base_SearchResult=0x7f0b0003;
-        public static final int TextAppearance_AppCompat_Base_SearchResult_Subtitle=0x7f0b0004;
-        public static final int TextAppearance_AppCompat_Base_SearchResult_Title=0x7f0b0005;
-        public static final int TextAppearance_AppCompat_Base_Widget_PopupMenu_Large=0x7f0b0006;
-        public static final int TextAppearance_AppCompat_Base_Widget_PopupMenu_Small=0x7f0b0007;
-        public static final int TextAppearance_AppCompat_Light_Base_SearchResult=0x7f0b0008;
-        public static final int TextAppearance_AppCompat_Light_Base_SearchResult_Subtitle=0x7f0b0009;
-        public static final int TextAppearance_AppCompat_Light_Base_SearchResult_Title=0x7f0b000a;
-        public static final int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Large=0x7f0b000b;
-        public static final int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Small=0x7f0b000c;
-        public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0b000d;
-        public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0b000e;
-        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0b000f;
-        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0b0010;
-        public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0b0011;
-        public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0b0012;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0b0013;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0b0014;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0b0015;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0b0016;
-        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0b0017;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0b0018;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0b0019;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0b001a;
-        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0b001b;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Menu=0x7f0b001c;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle=0x7f0b001d;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle_Inverse=0x7f0b001e;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Title=0x7f0b001f;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Title_Inverse=0x7f0b0020;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle=0x7f0b0021;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle_Inverse=0x7f0b0022;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Title=0x7f0b0023;
-        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Title_Inverse=0x7f0b0024;
-        public static final int TextAppearance_AppCompat_Widget_Base_DropDownItem=0x7f0b0025;
-        public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0b0026;
-        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0b0027;
-        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0b0028;
-        public static final int TextAppearance_Widget_AppCompat_Base_ExpandedMenu_Item=0x7f0b0029;
-        public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0b002a;
-        public static final int Theme_AppCompat=0x7f0b002b;
-        public static final int Theme_AppCompat_Base_CompactMenu=0x7f0b002c;
-        public static final int Theme_AppCompat_Base_CompactMenu_Dialog=0x7f0b002d;
-        public static final int Theme_AppCompat_CompactMenu=0x7f0b002e;
-        public static final int Theme_AppCompat_CompactMenu_Dialog=0x7f0b002f;
-        public static final int Theme_AppCompat_DialogWhenLarge=0x7f0b0030;
-        public static final int Theme_AppCompat_Light=0x7f0b0031;
-        public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0b0032;
-        public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0b0033;
-        public static final int Theme_Base=0x7f0b0034;
-        public static final int Theme_Base_AppCompat=0x7f0b0035;
-        public static final int Theme_Base_AppCompat_Dialog_FixedSize=0x7f0b0036;
-        public static final int Theme_Base_AppCompat_Dialog_Light_FixedSize=0x7f0b0037;
-        public static final int Theme_Base_AppCompat_DialogWhenLarge=0x7f0b0038;
-        public static final int Theme_Base_AppCompat_DialogWhenLarge_Base=0x7f0b008b;
-        public static final int Theme_Base_AppCompat_Light=0x7f0b0039;
-        public static final int Theme_Base_AppCompat_Light_DarkActionBar=0x7f0b003a;
-        public static final int Theme_Base_AppCompat_Light_DialogWhenLarge=0x7f0b003b;
-        public static final int Theme_Base_AppCompat_Light_DialogWhenLarge_Base=0x7f0b008c;
-        public static final int Theme_Base_Light=0x7f0b003c;
-        public static final int Widget_AppCompat_ActionBar=0x7f0b003d;
-        public static final int Widget_AppCompat_ActionBar_Solid=0x7f0b003e;
-        public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0b003f;
-        public static final int Widget_AppCompat_ActionBar_TabText=0x7f0b0040;
-        public static final int Widget_AppCompat_ActionBar_TabView=0x7f0b0041;
-        public static final int Widget_AppCompat_ActionButton=0x7f0b0042;
-        public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0b0043;
-        public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0b0044;
-        public static final int Widget_AppCompat_ActionMode=0x7f0b0045;
-        public static final int Widget_AppCompat_ActivityChooserView=0x7f0b0046;
-        public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0b0047;
-        public static final int Widget_AppCompat_Base_ActionBar=0x7f0b0048;
-        public static final int Widget_AppCompat_Base_ActionBar_Solid=0x7f0b0049;
-        public static final int Widget_AppCompat_Base_ActionBar_TabBar=0x7f0b004a;
-        public static final int Widget_AppCompat_Base_ActionBar_TabText=0x7f0b004b;
-        public static final int Widget_AppCompat_Base_ActionBar_TabView=0x7f0b004c;
-        public static final int Widget_AppCompat_Base_ActionButton=0x7f0b004d;
-        public static final int Widget_AppCompat_Base_ActionButton_CloseMode=0x7f0b004e;
-        public static final int Widget_AppCompat_Base_ActionButton_Overflow=0x7f0b004f;
-        public static final int Widget_AppCompat_Base_ActionMode=0x7f0b0050;
-        public static final int Widget_AppCompat_Base_ActivityChooserView=0x7f0b0051;
-        public static final int Widget_AppCompat_Base_AutoCompleteTextView=0x7f0b0052;
-        public static final int Widget_AppCompat_Base_DropDownItem_Spinner=0x7f0b0053;
-        public static final int Widget_AppCompat_Base_ListPopupWindow=0x7f0b0054;
-        public static final int Widget_AppCompat_Base_ListView_DropDown=0x7f0b0055;
-        public static final int Widget_AppCompat_Base_ListView_Menu=0x7f0b0056;
-        public static final int Widget_AppCompat_Base_PopupMenu=0x7f0b0057;
-        public static final int Widget_AppCompat_Base_ProgressBar=0x7f0b0058;
-        public static final int Widget_AppCompat_Base_ProgressBar_Horizontal=0x7f0b0059;
-        public static final int Widget_AppCompat_Base_Spinner=0x7f0b005a;
-        public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0b005b;
-        public static final int Widget_AppCompat_Light_ActionBar=0x7f0b005c;
-        public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0b005d;
-        public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0b005e;
-        public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0b005f;
-        public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0b0060;
-        public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0b0061;
-        public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0b0062;
-        public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0b0063;
-        public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0b0064;
-        public static final int Widget_AppCompat_Light_ActionButton=0x7f0b0065;
-        public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0b0066;
-        public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0b0067;
-        public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0b0068;
-        public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0b0069;
-        public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0b006a;
-        public static final int Widget_AppCompat_Light_Base_ActionBar=0x7f0b006b;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_Solid=0x7f0b006c;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_Solid_Inverse=0x7f0b006d;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabBar=0x7f0b006e;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabBar_Inverse=0x7f0b006f;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabText=0x7f0b0070;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabText_Inverse=0x7f0b0071;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabView=0x7f0b0072;
-        public static final int Widget_AppCompat_Light_Base_ActionBar_TabView_Inverse=0x7f0b0073;
-        public static final int Widget_AppCompat_Light_Base_ActionButton=0x7f0b0074;
-        public static final int Widget_AppCompat_Light_Base_ActionButton_CloseMode=0x7f0b0075;
-        public static final int Widget_AppCompat_Light_Base_ActionButton_Overflow=0x7f0b0076;
-        public static final int Widget_AppCompat_Light_Base_ActionMode_Inverse=0x7f0b0077;
-        public static final int Widget_AppCompat_Light_Base_ActivityChooserView=0x7f0b0078;
-        public static final int Widget_AppCompat_Light_Base_AutoCompleteTextView=0x7f0b0079;
-        public static final int Widget_AppCompat_Light_Base_DropDownItem_Spinner=0x7f0b007a;
-        public static final int Widget_AppCompat_Light_Base_ListPopupWindow=0x7f0b007b;
-        public static final int Widget_AppCompat_Light_Base_ListView_DropDown=0x7f0b007c;
-        public static final int Widget_AppCompat_Light_Base_PopupMenu=0x7f0b007d;
-        public static final int Widget_AppCompat_Light_Base_Spinner=0x7f0b007e;
-        public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0b007f;
-        public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0b0080;
-        public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0b0081;
-        public static final int Widget_AppCompat_Light_PopupMenu=0x7f0b0082;
-        public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0b0083;
-        public static final int Widget_AppCompat_ListPopupWindow=0x7f0b0084;
-        public static final int Widget_AppCompat_ListView_DropDown=0x7f0b0085;
-        public static final int Widget_AppCompat_ListView_Menu=0x7f0b0086;
-        public static final int Widget_AppCompat_PopupMenu=0x7f0b0087;
-        public static final int Widget_AppCompat_ProgressBar=0x7f0b0088;
-        public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0b0089;
-        public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0b008a;
+        public static final int AppTheme=0x7f0c0001;
+        public static final int TextAppearance_AppCompat_Base_CompactMenu_Dialog=0x7f0c0002;
+        public static final int TextAppearance_AppCompat_Base_SearchResult=0x7f0c0003;
+        public static final int TextAppearance_AppCompat_Base_SearchResult_Subtitle=0x7f0c0004;
+        public static final int TextAppearance_AppCompat_Base_SearchResult_Title=0x7f0c0005;
+        public static final int TextAppearance_AppCompat_Base_Widget_PopupMenu_Large=0x7f0c0006;
+        public static final int TextAppearance_AppCompat_Base_Widget_PopupMenu_Small=0x7f0c0007;
+        public static final int TextAppearance_AppCompat_Light_Base_SearchResult=0x7f0c0008;
+        public static final int TextAppearance_AppCompat_Light_Base_SearchResult_Subtitle=0x7f0c0009;
+        public static final int TextAppearance_AppCompat_Light_Base_SearchResult_Title=0x7f0c000a;
+        public static final int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Large=0x7f0c000b;
+        public static final int TextAppearance_AppCompat_Light_Base_Widget_PopupMenu_Small=0x7f0c000c;
+        public static final int TextAppearance_AppCompat_Light_SearchResult_Subtitle=0x7f0c000d;
+        public static final int TextAppearance_AppCompat_Light_SearchResult_Title=0x7f0c000e;
+        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Large=0x7f0c000f;
+        public static final int TextAppearance_AppCompat_Light_Widget_PopupMenu_Small=0x7f0c0010;
+        public static final int TextAppearance_AppCompat_SearchResult_Subtitle=0x7f0c0011;
+        public static final int TextAppearance_AppCompat_SearchResult_Title=0x7f0c0012;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Menu=0x7f0c0013;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle=0x7f0c0014;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Subtitle_Inverse=0x7f0c0015;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title=0x7f0c0016;
+        public static final int TextAppearance_AppCompat_Widget_ActionBar_Title_Inverse=0x7f0c0017;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle=0x7f0c0018;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Subtitle_Inverse=0x7f0c0019;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title=0x7f0c001a;
+        public static final int TextAppearance_AppCompat_Widget_ActionMode_Title_Inverse=0x7f0c001b;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Menu=0x7f0c001c;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle=0x7f0c001d;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Subtitle_Inverse=0x7f0c001e;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Title=0x7f0c001f;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionBar_Title_Inverse=0x7f0c0020;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle=0x7f0c0021;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Subtitle_Inverse=0x7f0c0022;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Title=0x7f0c0023;
+        public static final int TextAppearance_AppCompat_Widget_Base_ActionMode_Title_Inverse=0x7f0c0024;
+        public static final int TextAppearance_AppCompat_Widget_Base_DropDownItem=0x7f0c0025;
+        public static final int TextAppearance_AppCompat_Widget_DropDownItem=0x7f0c0026;
+        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Large=0x7f0c0027;
+        public static final int TextAppearance_AppCompat_Widget_PopupMenu_Small=0x7f0c0028;
+        public static final int TextAppearance_Widget_AppCompat_Base_ExpandedMenu_Item=0x7f0c0029;
+        public static final int TextAppearance_Widget_AppCompat_ExpandedMenu_Item=0x7f0c002a;
+        public static final int Theme_AppCompat=0x7f0c002b;
+        public static final int Theme_AppCompat_Base_CompactMenu=0x7f0c002c;
+        public static final int Theme_AppCompat_Base_CompactMenu_Dialog=0x7f0c002d;
+        public static final int Theme_AppCompat_CompactMenu=0x7f0c002e;
+        public static final int Theme_AppCompat_CompactMenu_Dialog=0x7f0c002f;
+        public static final int Theme_AppCompat_DialogWhenLarge=0x7f0c0030;
+        public static final int Theme_AppCompat_Light=0x7f0c0031;
+        public static final int Theme_AppCompat_Light_DarkActionBar=0x7f0c0032;
+        public static final int Theme_AppCompat_Light_DialogWhenLarge=0x7f0c0033;
+        public static final int Theme_Base=0x7f0c0034;
+        public static final int Theme_Base_AppCompat=0x7f0c0035;
+        public static final int Theme_Base_AppCompat_Dialog_FixedSize=0x7f0c0036;
+        public static final int Theme_Base_AppCompat_Dialog_Light_FixedSize=0x7f0c0037;
+        public static final int Theme_Base_AppCompat_DialogWhenLarge=0x7f0c0038;
+        public static final int Theme_Base_AppCompat_DialogWhenLarge_Base=0x7f0c0098;
+        public static final int Theme_Base_AppCompat_Light=0x7f0c0039;
+        public static final int Theme_Base_AppCompat_Light_DarkActionBar=0x7f0c003a;
+        public static final int Theme_Base_AppCompat_Light_DialogWhenLarge=0x7f0c003b;
+        public static final int Theme_Base_AppCompat_Light_DialogWhenLarge_Base=0x7f0c0099;
+        public static final int Theme_Base_Light=0x7f0c003c;
+        public static final int Widget_AppCompat_ActionBar=0x7f0c003d;
+        public static final int Widget_AppCompat_ActionBar_Solid=0x7f0c003e;
+        public static final int Widget_AppCompat_ActionBar_TabBar=0x7f0c003f;
+        public static final int Widget_AppCompat_ActionBar_TabText=0x7f0c0040;
+        public static final int Widget_AppCompat_ActionBar_TabView=0x7f0c0041;
+        public static final int Widget_AppCompat_ActionButton=0x7f0c0042;
+        public static final int Widget_AppCompat_ActionButton_CloseMode=0x7f0c0043;
+        public static final int Widget_AppCompat_ActionButton_Overflow=0x7f0c0044;
+        public static final int Widget_AppCompat_ActionMode=0x7f0c0045;
+        public static final int Widget_AppCompat_ActivityChooserView=0x7f0c0046;
+        public static final int Widget_AppCompat_AutoCompleteTextView=0x7f0c0047;
+        public static final int Widget_AppCompat_Base_ActionBar=0x7f0c0048;
+        public static final int Widget_AppCompat_Base_ActionBar_Solid=0x7f0c0049;
+        public static final int Widget_AppCompat_Base_ActionBar_TabBar=0x7f0c004a;
+        public static final int Widget_AppCompat_Base_ActionBar_TabText=0x7f0c004b;
+        public static final int Widget_AppCompat_Base_ActionBar_TabView=0x7f0c004c;
+        public static final int Widget_AppCompat_Base_ActionButton=0x7f0c004d;
+        public static final int Widget_AppCompat_Base_ActionButton_CloseMode=0x7f0c004e;
+        public static final int Widget_AppCompat_Base_ActionButton_Overflow=0x7f0c004f;
+        public static final int Widget_AppCompat_Base_ActionMode=0x7f0c0050;
+        public static final int Widget_AppCompat_Base_ActivityChooserView=0x7f0c0051;
+        public static final int Widget_AppCompat_Base_AutoCompleteTextView=0x7f0c0052;
+        public static final int Widget_AppCompat_Base_DropDownItem_Spinner=0x7f0c0053;
+        public static final int Widget_AppCompat_Base_ListPopupWindow=0x7f0c0054;
+        public static final int Widget_AppCompat_Base_ListView_DropDown=0x7f0c0055;
+        public static final int Widget_AppCompat_Base_ListView_Menu=0x7f0c0056;
+        public static final int Widget_AppCompat_Base_PopupMenu=0x7f0c0057;
+        public static final int Widget_AppCompat_Base_ProgressBar=0x7f0c0058;
+        public static final int Widget_AppCompat_Base_ProgressBar_Horizontal=0x7f0c0059;
+        public static final int Widget_AppCompat_Base_Spinner=0x7f0c005a;
+        public static final int Widget_AppCompat_DropDownItem_Spinner=0x7f0c005b;
+        public static final int Widget_AppCompat_Light_ActionBar=0x7f0c005c;
+        public static final int Widget_AppCompat_Light_ActionBar_Solid=0x7f0c005d;
+        public static final int Widget_AppCompat_Light_ActionBar_Solid_Inverse=0x7f0c005e;
+        public static final int Widget_AppCompat_Light_ActionBar_TabBar=0x7f0c005f;
+        public static final int Widget_AppCompat_Light_ActionBar_TabBar_Inverse=0x7f0c0060;
+        public static final int Widget_AppCompat_Light_ActionBar_TabText=0x7f0c0061;
+        public static final int Widget_AppCompat_Light_ActionBar_TabText_Inverse=0x7f0c0062;
+        public static final int Widget_AppCompat_Light_ActionBar_TabView=0x7f0c0063;
+        public static final int Widget_AppCompat_Light_ActionBar_TabView_Inverse=0x7f0c0064;
+        public static final int Widget_AppCompat_Light_ActionButton=0x7f0c0065;
+        public static final int Widget_AppCompat_Light_ActionButton_CloseMode=0x7f0c0066;
+        public static final int Widget_AppCompat_Light_ActionButton_Overflow=0x7f0c0067;
+        public static final int Widget_AppCompat_Light_ActionMode_Inverse=0x7f0c0068;
+        public static final int Widget_AppCompat_Light_ActivityChooserView=0x7f0c0069;
+        public static final int Widget_AppCompat_Light_AutoCompleteTextView=0x7f0c006a;
+        public static final int Widget_AppCompat_Light_Base_ActionBar=0x7f0c006b;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_Solid=0x7f0c006c;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_Solid_Inverse=0x7f0c006d;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabBar=0x7f0c006e;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabBar_Inverse=0x7f0c006f;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabText=0x7f0c0070;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabText_Inverse=0x7f0c0071;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabView=0x7f0c0072;
+        public static final int Widget_AppCompat_Light_Base_ActionBar_TabView_Inverse=0x7f0c0073;
+        public static final int Widget_AppCompat_Light_Base_ActionButton=0x7f0c0074;
+        public static final int Widget_AppCompat_Light_Base_ActionButton_CloseMode=0x7f0c0075;
+        public static final int Widget_AppCompat_Light_Base_ActionButton_Overflow=0x7f0c0076;
+        public static final int Widget_AppCompat_Light_Base_ActionMode_Inverse=0x7f0c0077;
+        public static final int Widget_AppCompat_Light_Base_ActivityChooserView=0x7f0c0078;
+        public static final int Widget_AppCompat_Light_Base_AutoCompleteTextView=0x7f0c0079;
+        public static final int Widget_AppCompat_Light_Base_DropDownItem_Spinner=0x7f0c007a;
+        public static final int Widget_AppCompat_Light_Base_ListPopupWindow=0x7f0c007b;
+        public static final int Widget_AppCompat_Light_Base_ListView_DropDown=0x7f0c007c;
+        public static final int Widget_AppCompat_Light_Base_PopupMenu=0x7f0c007d;
+        public static final int Widget_AppCompat_Light_Base_Spinner=0x7f0c007e;
+        public static final int Widget_AppCompat_Light_DropDownItem_Spinner=0x7f0c007f;
+        public static final int Widget_AppCompat_Light_ListPopupWindow=0x7f0c0080;
+        public static final int Widget_AppCompat_Light_ListView_DropDown=0x7f0c0081;
+        public static final int Widget_AppCompat_Light_PopupMenu=0x7f0c0082;
+        public static final int Widget_AppCompat_Light_Spinner_DropDown_ActionBar=0x7f0c0083;
+        public static final int Widget_AppCompat_ListPopupWindow=0x7f0c0084;
+        public static final int Widget_AppCompat_ListView_DropDown=0x7f0c0085;
+        public static final int Widget_AppCompat_ListView_Menu=0x7f0c0086;
+        public static final int Widget_AppCompat_PopupMenu=0x7f0c0087;
+        public static final int Widget_AppCompat_ProgressBar=0x7f0c0088;
+        public static final int Widget_AppCompat_ProgressBar_Horizontal=0x7f0c0089;
+        public static final int Widget_AppCompat_Spinner_DropDown_ActionBar=0x7f0c008a;
+        public static final int bottom_add_button=0x7f0c008b;
+        public static final int bottom_button=0x7f0c008c;
+        public static final int event_view_content=0x7f0c008d;
+        public static final int event_view_date_text=0x7f0c008e;
+        public static final int event_view_label=0x7f0c008f;
+        public static final int event_view_note=0x7f0c0090;
+        public static final int gen_content=0x7f0c0091;
+        public static final int gen_label=0x7f0c0092;
+        public static final int general_title_bar=0x7f0c0093;
+        public static final int themed_add_button=0x7f0c0094;
+        public static final int themed_bottom_button=0x7f0c0095;
+        public static final int themed_button=0x7f0c0096;
+        public static final int themed_button_big=0x7f0c0097;
     }
     public static final class styleable {
         /** Attributes that can be used with a ActionBar.
@@ -2042,7 +2400,7 @@ containing a value of this type.
          */
         public static final int[] MenuView = {
             0x010100ae, 0x0101012c, 0x0101012d, 0x0101012e,
-            0x0101012f, 0x01010130, 0x01010131, 0x01010435
+            0x0101012f, 0x01010130, 0x01010131, 0x01010438
         };
         /**
           <p>This symbol is the offset where the {@link android.R.attr#headerBackground}
@@ -2431,5 +2789,396 @@ containing a value of this type.
           @attr name com.javaclass.androidcalendar:paddingStart
         */
         public static final int View_paddingStart = 1;
+        /** Attributes that can be used with a WeekView.
+           <p>Includes the following attributes:</p>
+           <table>
+           <colgroup align="left" />
+           <colgroup align="left" />
+           <tr><th>Attribute</th><th>Description</th></tr>
+           <tr><td><code>{@link #WeekView_columnGap com.javaclass.androidcalendar:columnGap}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_dayBackgroundColor com.javaclass.androidcalendar:dayBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_dayNameLength com.javaclass.androidcalendar:dayNameLength}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_eventMarginVertical com.javaclass.androidcalendar:eventMarginVertical}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_eventPadding com.javaclass.androidcalendar:eventPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_eventTextColor com.javaclass.androidcalendar:eventTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_eventTextSize com.javaclass.androidcalendar:eventTextSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_firstDayOfWeek com.javaclass.androidcalendar:firstDayOfWeek}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_headerColumnBackground com.javaclass.androidcalendar:headerColumnBackground}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_headerColumnPadding com.javaclass.androidcalendar:headerColumnPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_headerColumnTextColor com.javaclass.androidcalendar:headerColumnTextColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_headerRowBackgroundColor com.javaclass.androidcalendar:headerRowBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_headerRowPadding com.javaclass.androidcalendar:headerRowPadding}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_hourHeight com.javaclass.androidcalendar:hourHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_hourSeparatorColor com.javaclass.androidcalendar:hourSeparatorColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_hourSeparatorHeight com.javaclass.androidcalendar:hourSeparatorHeight}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_noOfVisibleDays com.javaclass.androidcalendar:noOfVisibleDays}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_overlappingEventGap com.javaclass.androidcalendar:overlappingEventGap}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_textSize com.javaclass.androidcalendar:textSize}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_todayBackgroundColor com.javaclass.androidcalendar:todayBackgroundColor}</code></td><td></td></tr>
+           <tr><td><code>{@link #WeekView_todayHeaderTextColor com.javaclass.androidcalendar:todayHeaderTextColor}</code></td><td></td></tr>
+           </table>
+           @see #WeekView_columnGap
+           @see #WeekView_dayBackgroundColor
+           @see #WeekView_dayNameLength
+           @see #WeekView_eventMarginVertical
+           @see #WeekView_eventPadding
+           @see #WeekView_eventTextColor
+           @see #WeekView_eventTextSize
+           @see #WeekView_firstDayOfWeek
+           @see #WeekView_headerColumnBackground
+           @see #WeekView_headerColumnPadding
+           @see #WeekView_headerColumnTextColor
+           @see #WeekView_headerRowBackgroundColor
+           @see #WeekView_headerRowPadding
+           @see #WeekView_hourHeight
+           @see #WeekView_hourSeparatorColor
+           @see #WeekView_hourSeparatorHeight
+           @see #WeekView_noOfVisibleDays
+           @see #WeekView_overlappingEventGap
+           @see #WeekView_textSize
+           @see #WeekView_todayBackgroundColor
+           @see #WeekView_todayHeaderTextColor
+         */
+        public static final int[] WeekView = {
+            0x7f01006e, 0x7f01006f, 0x7f010070, 0x7f010071,
+            0x7f010072, 0x7f010073, 0x7f010074, 0x7f010075,
+            0x7f010076, 0x7f010077, 0x7f010078, 0x7f010079,
+            0x7f01007a, 0x7f01007b, 0x7f01007c, 0x7f01007d,
+            0x7f01007e, 0x7f01007f, 0x7f010080, 0x7f010081,
+            0x7f010082
+        };
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#columnGap}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:columnGap
+        */
+        public static final int WeekView_columnGap = 6;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#dayBackgroundColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:dayBackgroundColor
+        */
+        public static final int WeekView_dayBackgroundColor = 10;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#dayNameLength}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>length_short</code></td><td>1</td><td></td></tr>
+<tr><td><code>length_long</code></td><td>2</td><td></td></tr>
+</table>
+          @attr name com.javaclass.androidcalendar:dayNameLength
+        */
+        public static final int WeekView_dayNameLength = 18;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#eventMarginVertical}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:eventMarginVertical
+        */
+        public static final int WeekView_eventMarginVertical = 20;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#eventPadding}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:eventPadding
+        */
+        public static final int WeekView_eventPadding = 16;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#eventTextColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:eventTextColor
+        */
+        public static final int WeekView_eventTextColor = 15;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#eventTextSize}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:eventTextSize
+        */
+        public static final int WeekView_eventTextSize = 3;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#firstDayOfWeek}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be one of the following constant values.</p>
+<table>
+<colgroup align="left" />
+<colgroup align="left" />
+<colgroup align="left" />
+<tr><th>Constant</th><th>Value</th><th>Description</th></tr>
+<tr><td><code>sunday</code></td><td>1</td><td></td></tr>
+<tr><td><code>monday</code></td><td>2</td><td></td></tr>
+<tr><td><code>tuesday</code></td><td>3</td><td></td></tr>
+<tr><td><code>wednesday</code></td><td>4</td><td></td></tr>
+<tr><td><code>thursday</code></td><td>5</td><td></td></tr>
+<tr><td><code>friday</code></td><td>6</td><td></td></tr>
+<tr><td><code>saturday</code></td><td>7</td><td></td></tr>
+</table>
+          @attr name com.javaclass.androidcalendar:firstDayOfWeek
+        */
+        public static final int WeekView_firstDayOfWeek = 0;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#headerColumnBackground}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:headerColumnBackground
+        */
+        public static final int WeekView_headerColumnBackground = 17;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#headerColumnPadding}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:headerColumnPadding
+        */
+        public static final int WeekView_headerColumnPadding = 4;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#headerColumnTextColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:headerColumnTextColor
+        */
+        public static final int WeekView_headerColumnTextColor = 7;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#headerRowBackgroundColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:headerRowBackgroundColor
+        */
+        public static final int WeekView_headerRowBackgroundColor = 9;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#headerRowPadding}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:headerRowPadding
+        */
+        public static final int WeekView_headerRowPadding = 5;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#hourHeight}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:hourHeight
+        */
+        public static final int WeekView_hourHeight = 1;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#hourSeparatorColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:hourSeparatorColor
+        */
+        public static final int WeekView_hourSeparatorColor = 11;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#hourSeparatorHeight}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:hourSeparatorHeight
+        */
+        public static final int WeekView_hourSeparatorHeight = 14;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#noOfVisibleDays}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be an integer value, such as "<code>100</code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:noOfVisibleDays
+        */
+        public static final int WeekView_noOfVisibleDays = 8;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#overlappingEventGap}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:overlappingEventGap
+        */
+        public static final int WeekView_overlappingEventGap = 19;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#textSize}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a dimension value, which is a floating point number appended with a unit such as "<code>14.5sp</code>".
+Available units are: px (pixels), dp (density-independent pixels), sp (scaled pixels based on preferred font size),
+in (inches), mm (millimeters).
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:textSize
+        */
+        public static final int WeekView_textSize = 2;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#todayBackgroundColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:todayBackgroundColor
+        */
+        public static final int WeekView_todayBackgroundColor = 12;
+        /**
+          <p>This symbol is the offset where the {@link com.javaclass.androidcalendar.R.attr#todayHeaderTextColor}
+          attribute's value can be found in the {@link #WeekView} array.
+
+
+          <p>Must be a color value, in the form of "<code>#<i>rgb</i></code>", "<code>#<i>argb</i></code>",
+"<code>#<i>rrggbb</i></code>", or "<code>#<i>aarrggbb</i></code>".
+<p>This may also be a reference to a resource (in the form
+"<code>@[<i>package</i>:]<i>type</i>:<i>name</i></code>") or
+theme attribute (in the form
+"<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
+containing a value of this type.
+          @attr name com.javaclass.androidcalendar:todayHeaderTextColor
+        */
+        public static final int WeekView_todayHeaderTextColor = 13;
     };
 }

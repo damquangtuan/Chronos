@@ -4,7 +4,6 @@
     <string name="app_name">Chronos</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-
     <string name="monday">MON</string>
     <string name="tuesday">TUE</string>
     <string name="wednesday">WED</string>
@@ -12,20 +11,17 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
     <string name="sunday">SUN</string>
-
     <string name="action_today">Go to today</string>
     <string name="action_day_view">Day view</string>
     <string name="action_three_day_view">3 day view</string>
     <string name="action_week_view">Week view</string>
     <string name="MonthlyView">Month view</string>
     <string name="DailyView">Day view</string>
-
     <string name="Today">Mode</string>
     <string name="Year">Event</string>
     <string name="Month">Function</string>
     <string name="Week">Setting</string>
     <string name="plus">+</string>
-
     <string name="placeholderDateAndTime">7:00pm, 15 December 2014</string>
     <string name="event_name_hint">Title of event</string>
     <string name="event_location_hint">The location of the event</string>
@@ -38,21 +34,22 @@
     <string name="NotesPrompt">Description:</string>
     <string name="Save">Save</string>
     <string name="Cancel">Cancel</string>
-
     <string name="selectStartDate">Select Start Date</string>
     <string name="selectEndDate">Select End Date</string>
 
-    <string-array name = "repeat_array">
+    <string-array name="repeat_array">
         <item>No Repeat</item>
         <item>Daily Repeat</item>
         <item>Weekly Repeat</item>
     </string-array>
-
-    <string-array name = "color_array">
+    <string-array name="color_array">
         <item>Red</item>
         <item>Blue</item>
         <item>Yellow</item>
         <item>Purple</item>
         <item>Green</item>
     </string-array>
+
+    <string name="title_activity_monthly">MonthlyActivity</string>
+
 </resources>
