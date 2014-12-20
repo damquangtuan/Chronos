@@ -21,7 +21,7 @@ import Database.SQLite.MySQLiteHelper;
 import Database.SQLite.model.Event;
 
 /**
- * Created by root on 14. 12. 11.
+ * Created by Dam Quang Tuan on 14. 12. 11.
  */
 public class WeeklyActivity extends Activity implements WeekView.MonthChangeListener,
         WeekView.EventClickListener, WeekView.EventLongPressListener, View.OnClickListener {
@@ -121,7 +121,8 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
 
         // Populate the week view with some events.
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
-        List<Event> eventList = db.getAllEvents();
+        Scheduler scheduler = new Scheduler(db);
+        List<Event> eventList = scheduler.getEvents(newYear, newMonth);
         for(int i = 0; i <= eventList.size() - 1; i++) {
             Event event = eventList.get(i);
             WeekViewEvent weeklyEvent = new WeekViewEvent(event);
@@ -139,14 +140,15 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
             events.add(weeklyEvent);
         }
 
-        /*Calendar startTime = Calendar.getInstance();
+        /*
+        Calendar startTime = Calendar.getInstance();
         startTime.set(Calendar.HOUR_OF_DAY, 3);
         startTime.set(Calendar.MINUTE, 0);
         startTime.set(Calendar.MONTH, newMonth-1);
         startTime.set(Calendar.YEAR, newYear);
         Calendar endTime = (Calendar) startTime.clone();
         endTime.add(Calendar.HOUR, 1);
-        endTime.set(Calendar.MONTH, newMonth-1);
+        endTime.set(Calendar.MONTH, newMonth);
         WeekViewEvent event = new WeekViewEvent(1, getEventTitle(startTime), startTime, endTime);
         event.setColor(getResources().getColor(R.color.event_color_01));
         events.add(event);
@@ -235,8 +237,8 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         endTime.add(Calendar.HOUR_OF_DAY, 3);
         event = new WeekViewEvent(5, getEventTitle(startTime), startTime, endTime);
         event.setColor(getResources().getColor(R.color.event_color_02));
-        events.add(event);*/
-
+        events.add(event);
+*/
         return events;
     }
 
@@ -260,11 +262,11 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
     @Override
     public void onClick(View view) {
         switch(view.getId()) {
-            case R.id.week_today_button:
+            case R.id.week_mode_button:
                 break;
-            case R.id.week_year_button:
+            case R.id.week_event_button:
                 break;
-            case R.id.week_week_button:
+            case R.id.week_Setting_button:
                 break;
             case R.id.week_add_button:
                 Intent event = new Intent(WeeklyActivity.this, EventEdit.class);

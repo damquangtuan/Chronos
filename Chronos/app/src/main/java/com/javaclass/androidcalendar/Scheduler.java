@@ -3,6 +3,10 @@ package com.javaclass.androidcalendar;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Iterator;
+import java.util.List;
+
+import Database.SQLite.MySQLiteHelper;
+import Database.SQLite.model.Event;
 
 /**
  * Created by Jeonghwan on 2014-12-12.
@@ -11,8 +15,14 @@ public class Scheduler {
 
     private ArrayList<CalendarEvent> event_list; // hold events registered
 
+    private MySQLiteHelper db = null;
+
     public Scheduler() {
         event_list = new ArrayList<CalendarEvent>();
+    }
+
+    public Scheduler(MySQLiteHelper db) {
+        this.db = db;
     }
 
     public int Size() {
@@ -144,5 +154,60 @@ public class Scheduler {
         }
         else
             return false;
+    }
+
+    public List<Event> getEvents(int year, int month) {
+        List<Event> eventList = db.getAllEvents(); // get all event from database
+        List<Event> returnList = new ArrayList<Event>();
+        for(int i = 0; i <= eventList.size() - 1; i++) {
+            Event event = eventList.get(i); //get event at index i
+            //start date
+            long start = event.getStart(); //get start in long milisecond
+            Calendar startCal = Calendar.getInstance(); //calendar for start
+            startCal.setTimeInMillis(start); //set calendar in milisecond
+            long startYear = startCal.get(startCal.YEAR);
+            long startMonth = startCal.get(startCal.MONTH);//get start month
+            //end date
+            long end = event.getEnd(); //get end in long milisecond
+            Calendar endCal = Calendar.getInstance(); //calendar for end
+            endCal.setTimeInMillis(end); // set calendar in milisecond
+            long endYear = endCal.get(endCal.YEAR); //get end year
+            long endMonth = endCal.get(endCal.MONTH); //get end month
+
+            if((startYear <= year) && (endYear >= year)) {
+                if ((startMonth <= month) && (endMonth >= month))
+                    returnList.add(event);
+            }
+        }
+        return returnList;
+    }
+
+    public List<Event> getEvents(int year, int month, int day) {
+        List<Event> eventList = db.getAllEvents(); // get all event from database
+        List<Event> returnList = new ArrayList<Event>();
+        for(int i = 0; i <= eventList.size() - 1; i++) {
+            Event event = eventList.get(i); //get event at index i
+            //start date
+            long start = event.getStart(); //get start in long milisecond
+            Calendar startCal = Calendar.getInstance(); //calendar for start
+            startCal.setTimeInMillis(start); //set calendar in milisecond
+            long startYear = startCal.get(startCal.YEAR);
+            long startMonth = startCal.get(startCal.MONTH);//get start month
+            long startDay = startCal.get(startCal.DAY_OF_MONTH); //get start day
+            //end date
+            long end = event.getEnd(); //get end in long milisecond
+            Calendar endCal = Calendar.getInstance(); //calendar for end
+            endCal.setTimeInMillis(end); // set calendar in milisecond
+            long endYear = endCal.get(endCal.YEAR); //get end year
+            long endMonth = endCal.get(endCal.MONTH); //get end month
+            long endDay = endCal.get(endCal.DAY_OF_MONTH); //get end day
+
+            if((startYear <= year) && (endYear >= year)) {
+                if ((startMonth <= month) && (endMonth >= month))
+                    if ((startDay <= day) && (endDay >= day))
+                        returnList.add(event); // add event to list
+            }
+        }
+        return returnList;
     }
 }

@@ -19,14 +19,14 @@ public class AndroidCalendar extends Activity {
 		//sets the main layout of the activity
 		setContentView(R.layout.activity_main);
 
-        ExtendedCalendarView calendar = (ExtendedCalendarView) findViewById(R.id.calendar);
+        //ExtendedCalendarView calendar = (ExtendedCalendarView) findViewById(R.id.calendar);
 
 
 		//initializes the calendarview
-		//initializeCalendar();
+		initializeCalendar();
 	}
 
-    /*
+
 	public void initializeCalendar() {
 		calendar = (CalendarView) findViewById(R.id.calendar);
 
@@ -59,5 +59,4 @@ public class AndroidCalendar extends Activity {
 			}
 		});
 	}
-	*/
 }

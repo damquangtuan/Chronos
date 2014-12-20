@@ -2,6 +2,7 @@ package Database.SQLite.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Locale;
 
 public class Event {
@@ -144,5 +145,4 @@ public class Event {
     public void setRepeat(int repeat) {
         this.repeat = repeat;
     }
-
 }
