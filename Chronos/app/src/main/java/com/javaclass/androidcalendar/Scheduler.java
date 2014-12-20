@@ -2,6 +2,7 @@ package com.javaclass.androidcalendar;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -156,6 +157,12 @@ public class Scheduler {
             return false;
     }
 
+    /**
+     * Get events with given year and month
+     * @param year
+     * @param month
+     * @return
+     */
     public List<Event> getEvents(int year, int month) {
         List<Event> eventList = db.getAllEvents(); // get all event from database
         List<Event> returnList = new ArrayList<Event>();
@@ -175,13 +182,38 @@ public class Scheduler {
             long endMonth = endCal.get(endCal.MONTH); //get end month
 
             if((startYear <= year) && (endYear >= year)) {
-                if ((startMonth <= month) && (endMonth >= month))
-                    returnList.add(event);
+                if ((startMonth <= month) && (endMonth >= month)) {
+                    // handle with repeat event
+                    if(event.getRepeat() == 1) {
+                        //first go through day by day from start date to end date
+                        for (Date date = startCal.getTime(); !startCal.after(endCal); startCal.add(Calendar.DATE, 1),
+                                date = startCal.getTime()) {
+                            Event newEvent = new Event();
+                            newEvent = event; // clone from existing event
+                            newEvent.setStart(date.getTime()); //set date again
+                            int hour = endCal.get(endCal.HOUR_OF_DAY); //get hour
+                            int minute = endCal.get(endCal.MINUTE); //get minute
+                            date.setHours(hour);//set hour
+                            date.setMinutes(minute);//set minute
+                            newEvent.setEnd(date.getTime()); //set end time which including end hour of event
+                            returnList.add(newEvent); //add to event list
+                        }
+                    } else {
+                        returnList.add(event);
+                    }
+                }
             }
         }
         return returnList;
     }
 
+    /**
+     * Get events with given year, month and day
+     * @param year
+     * @param month
+     * @param day
+     * @return
+     */
     public List<Event> getEvents(int year, int month, int day) {
         List<Event> eventList = db.getAllEvents(); // get all event from database
         List<Event> returnList = new ArrayList<Event>();
