@@ -32,12 +32,14 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
     private int mWeekViewType = TYPE_THREE_DAY_VIEW;
     private WeekView mWeekView;
     private MySQLiteHelper db = null;
+    private Scheduler scheduler = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weekly);
         db = new MySQLiteHelper(this);
+        scheduler = new Scheduler(db);
 
         Button addEvent = (Button) findViewById(R.id.week_add_button);
         addEvent.setOnClickListener(this);
@@ -121,7 +123,6 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
 
         // Populate the week view with some events.
         List<WeekViewEvent> events = new ArrayList<WeekViewEvent>();
-        Scheduler scheduler = new Scheduler(db);
         List<Event> eventList = scheduler.getEvents(newYear, newMonth);
         for(int i = 0; i <= eventList.size() - 1; i++) {
             Event event = eventList.get(i);
@@ -251,6 +252,11 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
     @Override
     public void onEventClick(WeekViewEvent event, RectF eventRect) {
         Toast.makeText(WeeklyActivity.this, "Clicked " + event.getName(), Toast.LENGTH_SHORT).show();
+        Intent eventDetail = new Intent(WeeklyActivity.this, EventDetail.class); //get EventDetail activity
+        long eventID = event.getId();
+        Event eventObject = scheduler.getEvent(eventID);
+        eventDetail.putExtra("event", eventObject);
+        startActivity(eventDetail);
     }
 
     @Override

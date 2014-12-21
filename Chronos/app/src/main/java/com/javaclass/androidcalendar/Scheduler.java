@@ -157,6 +157,19 @@ public class Scheduler {
             return false;
     }
 
+
+    public void addEvent(Event event) {
+        db.addEvent(event);
+    }
+    /**
+     *
+     * @param eventID
+     * @return
+     */
+    public Event getEvent(long eventID) {
+        Event event = db.getEvent(eventID);
+        return event;
+    }
     /**
      * Get events with given year and month
      * @param year
@@ -189,6 +202,7 @@ public class Scheduler {
                         for (Date date = startCal.getTime(); !startCal.after(endCal); startCal.add(Calendar.DATE, 1),
                                 date = startCal.getTime()) {
                             Event newEvent = new Event(); //declare a new event and set value for that
+                            newEvent.setEventId(event.getEventId());
                             newEvent.setName(event.getName());
                             newEvent.setDescription(event.getDescription());
                             newEvent.setLocation(event.getLocation());
@@ -208,6 +222,7 @@ public class Scheduler {
                         for (Date date = startCal.getTime(); !startCal.after(endCal); startCal.add(Calendar.DATE, 7),
                                 date = startCal.getTime()) {
                             Event newEvent = new Event(); //declare a new event and set value for that
+                            newEvent.setEventId(event.getEventId());
                             newEvent.setName(event.getName());
                             newEvent.setDescription(event.getDescription());
                             newEvent.setLocation(event.getLocation());

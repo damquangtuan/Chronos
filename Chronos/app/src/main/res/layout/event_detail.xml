@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/EventDetailLayout"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:baselineAligned="false"
+	android:orientation="vertical"
+    android:background="#fff">
+	<LinearLayout
+		android:id="@+id/EventDetailBelowTitleLayout"
+		android:layout_width="fill_parent"
+		android:layout_height="0dip"
+		android:layout_weight="1"
+		android:orientation="horizontal" >
+		<!-- Colour bar -->
+		<LinearLayout
+			android:id="@+id/EventDetailColourBar"
+			android:layout_width="13sp"
+			android:layout_height="fill_parent"
+			android:background="#704080f0"
+            android:orientation="horizontal" />
+		<ScrollView
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:fillViewport="true" >
+			<RelativeLayout
+				android:id="@+id/EventDetailDataLayout"
+				android:layout_width="fill_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical" >
+				<!-- Event Name -->
+				<EditText
+					android:id="@+id/EventNameDetail"
+					android:layout_width="fill_parent"
+					android:layout_height="48sp"
+					android:layout_margin="0dp"
+					android:hint="@string/event_name_hint"
+					android:inputType="textCapSentences|textAutoCorrect|textEmailSubject"
+					android:paddingLeft="2dp"
+					android:singleLine="true"
+					android:textSize="26sp" />
+				<!-- Outer Layout for from/to -->
+				<RelativeLayout
+					android:id="@+id/EventFromToLayoutDetail"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventNameDetail"
+					android:orientation="vertical" >
+					<!-- From content -->
+					<LinearLayout
+						android:id="@+id/EventFromContentDetail"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:paddingBottom="3sp" >
+                        <!-- Start from -->
+						<TextView
+							android:id="@+id/EventFromLabelDetail"
+							style="@style/event_view_label"
+							android:layout_width="60dp"
+							android:layout_height="fill_parent"
+							android:gravity="center_vertical"
+							android:text="@string/Start" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="3.5" >
+                            <EditText
+                                android:id="@+id/detailStartText"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1" >
+                            <ImageButton
+                                android:id="@+id/imageStartButtonDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_alignBottom="@+id/detailText"
+                                android:layout_toRightOf="@+id/detailText"
+                                android:contentDescription="@string/selectStartDate"
+                                android:cropToPadding="true"
+                                android:src="@drawable/calendar_icon" />
+						</LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="2.3" >
+                            <EditText
+                                android:id="@+id/detailStartTime"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1.8" >
+                            <Button
+                                android:id="@+id/btnTimeStartDetail"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:editable="false" >
+                            </Button>
+                        </LinearLayout>
+					</LinearLayout>
+					<!-- Until Content -->
+					<LinearLayout
+						android:id="@+id/EventUntilContentDetail"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/EventFromContentDetail"
+						android:paddingBottom="3sp" >
+						<!-- Until Label -->
+						<TextView
+							android:id="@+id/EventUntilLabelDetail"
+							style="@style/event_view_label"
+							android:layout_width="60dp"
+							android:layout_height="wrap_content"
+							android:text="@string/End" />
+						<LinearLayout
+							android:layout_width="0dip"
+							android:layout_height="fill_parent"
+							android:layout_marginRight="0sp"
+							android:layout_weight="3.5" >
+                            <EditText
+                                android:id="@+id/detailEndText"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1" >
+                            <ImageButton
+                                android:id="@+id/imageEndButtonDetail"
+                                android:layout_width="wrap_content"
+                                android:layout_height="fill_parent"
+                                android:layout_alignBottom="@+id/detailText"
+                                android:layout_toRightOf="@+id/detailText"
+                                android:contentDescription="@string/selectEndDate"
+                                android:cropToPadding="true"
+                                android:src="@drawable/calendar_icon" />
+						</LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="2.3" >
+                            <EditText
+                                android:id="@+id/detailEndTime"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:editable="false" >
+                            </EditText>
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="1.8" >
+                            <Button
+                                android:id="@+id/btnTimeEndDetail"
+                                android:layout_width="fill_parent"
+                                android:layout_marginLeft="0dp"
+                                android:layout_height="wrap_content"
+                                android:text="Time"
+                                android:editable="false" >
+                            </Button>
+                        </LinearLayout>
+					</LinearLayout>
+
+                    <!-- Repeater Label and Button -->
+                    <LinearLayout
+                        android:id="@+id/EventRepeatSpinnerDetail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventUntilContentDetail"
+                        android:paddingBottom="3sp" >
+
+                        <TextView
+                            android:id="@+id/EventRepeatTextDetail"
+                            style="@style/event_view_label"
+                            android:layout_width="60dp"
+                            android:layout_height="30sp"
+                            android:text="@string/Repeat" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="5" >
+                            <Spinner
+                                android:id="@+id/repeat_optionDetail"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                android:layout_marginLeft="0dp">
+                            </Spinner>
+                        </LinearLayout>
+                    </LinearLayout>
+                    <!-- Color Label and Button -->
+                    <LinearLayout
+                        android:id="@+id/EventColorSpinnerDetail"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventRepeatSpinnerDetail"
+                        android:paddingBottom="3sp" >
+
+                        <TextView
+                            android:id="@+id/EventColorTextDetail"
+                            style="@style/event_view_label"
+                            android:layout_width="60dp"
+                            android:layout_height="30sp"
+                            android:text="@string/Color" />
+                        <LinearLayout
+                            android:layout_width="0dip"
+                            android:layout_height="fill_parent"
+                            android:layout_marginRight="0sp"
+                            android:layout_weight="5" >
+                            <Spinner
+                                android:id="@+id/color_optionDetail"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                android:layout_marginLeft="0dp">
+                            </Spinner>
+                        </LinearLayout>
+                    </LinearLayout>
+				</RelativeLayout>
+				<!-- Location Label and Button -->
+				<RelativeLayout
+					android:id="@+id/EventLocationLayoutDetail"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventFromToLayoutDetail" >
+					<!-- Location Label -->
+					<TextView
+						android:id="@+id/EventLocationLabelDetail"
+						style="@style/event_view_label"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/Location" />
+					<EditText
+						android:id="@+id/EventLocationContentDetail"
+						style="@style/event_view_content"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+                        android:layout_below="@+id/EventLocationLabelDetail"
+                        android:gravity="top"
+						android:inputType="textCapSentences|textAutoCorrect|textPostalAddress|textMultiLine"/>
+				</RelativeLayout>
+				<!-- End location label and button -->
+				<RelativeLayout
+					android:id="@+id/EventNotesLayoutDetail"
+					android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:layout_below="@+id/EventLocationLayoutDetail"
+					android:paddingBottom="3sp">
+					<!-- Notes label and content -->
+					<TextView
+						android:id="@+id/EventNotesLabelDetail"
+						style="@style/event_view_label"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:text="@string/NotesPrompt" />
+					<EditText
+						android:id="@+id/EventNotesContentDetail"
+						style="@style/event_view_content"
+						android:layout_width="fill_parent"
+						android:layout_height="wrap_content"
+						android:layout_below="@+id/EventNotesLabelDetail"
+						android:gravity="top"
+						android:inputType="textCapSentences|textAutoCorrect|textMultiLine"
+						android:minLines="5" />
+				</RelativeLayout>
+			</RelativeLayout>
+		</ScrollView>
+	</LinearLayout>
+	<LinearLayout
+		android:id="@+id/button_layoutDetail"
+		android:layout_width="fill_parent"
+		android:layout_height="36sp"
+        android:background="#1848adff"
+		android:layout_gravity="bottom"
+		android:baselineAligned="false" >
+		<!-- Colour bar -->
+		<LinearLayout
+			android:id="@+id/EventDetailColourBarBottom"
+			android:layout_width="13sp"
+			android:layout_height="fill_parent"
+			android:background="#704080f0"
+            android:orientation="horizontal" />
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="3"
+			android:gravity="center"
+			android:padding="0sp" >
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content">
+				<Button
+					android:id="@+id/event_save_buttonDetail"
+					style="@style/themed_bottom_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal"
+					android:padding="0sp"
+					android:text="@string/Save"
+					android:width="110sp" />
+			</LinearLayout>
+		</LinearLayout>
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent"
+			android:layout_weight="3"
+            android:background="#1848adff"
+			android:gravity="center"
+			android:padding="0sp" >
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content" >
+				<Button
+					android:id="@+id/event_cancel_buttonDetail"
+					style="@style/themed_bottom_button"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:gravity="center_vertical|center_horizontal"
+					android:padding="0sp"
+					android:text="@string/Cancel"
+					android:width="110sp" />
+			</LinearLayout>
+		</LinearLayout>
+	</LinearLayout>
+</LinearLayout>

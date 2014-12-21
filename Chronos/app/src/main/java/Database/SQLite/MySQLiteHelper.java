@@ -95,21 +95,24 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Event getEvent(int id){
+    public Event getEvent(long id){
 
         // 1. get reference to readable DB
-        SQLiteDatabase db = this.getReadableDatabase();
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        String query = "SELECT * FROM " + EVENTS_TABLE + " WHERE _id = " + id;
+
+        Cursor cursor = db.rawQuery(query, null);
         // 2. build query
-        Cursor cursor =
+/*        Cursor cursor =
                 db.query(EVENTS_TABLE, // a. table
                         COLUMNS, // b. column names
-                        " id = ?", // c. selections
+                        " _id = ?", // c. selections
                         new String[] { String.valueOf(id) }, // d. selections args
                         null, // e. group by
                         null, // f. having
                         null, // g. order by
-                        null); // h. limit
+                        null); // h. limit*/
 
         // 3. if we got results get the first one
         if (cursor != null)
@@ -117,7 +120,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         // 4. build event object
         Event event = new Event();
-        event.setEventId(Integer.parseInt(cursor.getString(0)));
+        event.setEventId(cursor.getLong(cursor.getColumnIndex("_id")));
         event.setName(cursor.getString(1));
         event.setLocation(cursor.getString(2));
         event.setDescription(cursor.getString(3));
@@ -147,7 +150,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 event = new Event();
-                event.setEventId(Integer.parseInt(cursor.getString(0)));
+                event.setEventId(cursor.getLong(0));
                 event.setName(cursor.getString(1));
                 event.setLocation(cursor.getString(2));
                 event.setDescription(cursor.getString(3));

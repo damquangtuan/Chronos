@@ -1,11 +1,12 @@
 package Database.SQLite.model;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class Event {
+public class Event implements Serializable {
 	
 	private int color;
 	private String name;
