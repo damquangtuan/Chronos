@@ -79,6 +79,10 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     private int repeatOption = 0;
     private int colorOption = 0;
 
+    private ImageButton imageStartButton;
+    private ImageButton imageEndButton;
+    private Button timeStartButton;
+    private Button timeEndButton;
     private LinearLayout sidebar;
     private LinearLayout sidebarBottom;
     private TextView eventName;
@@ -139,12 +143,32 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         this.loadLayout();
     }
 
+    //to set all elements in detail screen disable
+    private void setEnable(boolean value) {
+        sidebar.setEnabled(value);
+        sidebarBottom.setEnabled(value);
+        imageStartButton.setEnabled(value); //set the button to be disable
+        imageEndButton.setEnabled(value); //set the button to be disable
+        timeStartButton.setEnabled(value); //set the button to be disable
+        timeEndButton.setEnabled(value); //set the button to be disable
+
+        eventName.setEnabled(value); //set to be disable
+        detailStartDate.setEnabled(value); //set to be disable
+        detailEndDate.setEnabled(value); //set to be disable
+        detailStartTime.setEnabled(value); //set to be disable
+        detailEndTime.setEnabled(value); //set to be disable
+        repeatSpinner.setEnabled(value); //set to be disable
+        colorSpinner.setEnabled(value); //set to be disable
+
+        locationView.setEnabled(value); //set to be disable
+        notesView.setEnabled(value); //set to be disable
+    }
+
     private void loadLayout() {
         //Event Colour
         sidebar = (LinearLayout)this.findViewById(R.id.EventDetailColourBar);
         sidebarBottom = (LinearLayout)this.findViewById(R.id.EventDetailColourBarBottom);
-        sidebar.setEnabled(false);
-        sidebarBottom.setEnabled(false);
+
 
         //Set up Save/Cancel buttons
         this.setupButton(R.id.event_save_buttonDetail, SAVE);
@@ -154,15 +178,15 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         this.setupButton(R.id.btnTimeStartDetail, START);
         this.setupButton(R.id.btnTimeEndDetail, END);
 
-        ImageButton imageStartButton = (ImageButton) findViewById(R.id.imageStartButtonDetail);
-        imageStartButton.setEnabled(false); //set the button to be disable
-        ImageButton imageEndButton = (ImageButton) findViewById(R.id.imageEndButtonDetail);
-        imageEndButton.setEnabled(false); //set the button to be disable
+        imageStartButton = (ImageButton) findViewById(R.id.imageStartButtonDetail);
 
-        Button timeStartButton = (Button) findViewById(R.id.btnTimeStartDetail);
-        timeStartButton.setEnabled(false); //set the button to be disable
-        Button timeEndButton = (Button) findViewById(R.id.btnTimeEndDetail);
-        timeEndButton.setEnabled(false); //set the button to be disable
+        imageEndButton = (ImageButton) findViewById(R.id.imageEndButtonDetail);
+
+
+        timeStartButton = (Button) findViewById(R.id.btnTimeStartDetail);
+
+        timeEndButton = (Button) findViewById(R.id.btnTimeEndDetail);
+
 
         //Title
         this.eventName = (TextView) this.findViewById(R.id.EventNameDetail);
@@ -171,7 +195,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         }
         eventName.setOnFocusChangeListener(this);
         eventName.setText(event.getName()); // set event name
-        eventName.setEnabled(false); //set to be disable
+
 
         //date/time fields
         cal = Calendar.getInstance();
@@ -182,20 +206,20 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         String dateFormat = "yyyy-mm-dd";
         detailStartDate = (EditText) findViewById(R.id.detailStartText);
         detailStartDate.setText(event.getStartDate(dateFormat));//set event start date
-        detailStartDate.setEnabled(false); //set to be disable
+
 
         detailEndDate = (EditText) findViewById(R.id.detailEndText);
         detailEndDate.setText(event.getEndDate(dateFormat));//set event end date
-        detailEndDate.setEnabled(false); //set to be disable
+
 
         String timeFormat = "hh-mm";
         detailStartTime = (EditText) findViewById(R.id.detailStartTime);
         detailStartTime.setText(event.getStartDate(timeFormat)); //set event start time
-        detailStartTime.setEnabled(false); //set to be disable
+
 
         detailEndTime = (EditText) findViewById(R.id.detailEndTime);
         detailEndTime.setText(event.getEndDate(timeFormat));//set event end time
-        detailEndTime.setEnabled(false); //set to be disable
+
 
         //get and set repeater
         repeatSpinner = (Spinner) findViewById(R.id.repeat_optionDetail);
@@ -207,7 +231,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         // Apply the adapter to the spinner
         repeatSpinner.setAdapter(adapter);
         repeatSpinner.setOnItemSelectedListener(this);
-        repeatSpinner.setEnabled(false); //set to be disable
+
 
         //get and set color
         colorSpinner = (Spinner) findViewById(R.id.color_optionDetail);
@@ -219,7 +243,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         // Apply the adapter to the spinner
         colorSpinner.setAdapter(colorAdapter);
         colorSpinner.setOnItemSelectedListener(this);
-        colorSpinner.setEnabled(false); //set to be disable
+
 
         //location view
         locationView = (TextView) this.findViewById(R.id.EventLocationContentDetail);
@@ -231,8 +255,8 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
 
         locationView.setOnFocusChangeListener(this);
         notesView.setOnFocusChangeListener(this);
-        locationView.setEnabled(false); //set to be disable
-        notesView.setEnabled(false); //set to be disable
+
+        setEnable(false);
     }
 
     private void setListen(Button b, final int dialog) {
@@ -263,14 +287,14 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         int button = ((Integer)arg0.getTag());
         switch ( button ) {
             case SAVE:
-                applyChanges();
-                //hangout for 500 mini seconds
-                try {
-                    Thread.sleep(500);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                Button saveButton = (Button) findViewById(R.id.event_save_buttonDetail);
+                if (saveButton.getText().toString().equals("Edit")) {
+                    setEnable(true);
+                    saveButton.setText("Save");
+                } else {
+                    applyChanges();
+                    finish();
                 }
-                finish();
                 break;
             case CANCEL:
                 finish();
@@ -404,8 +428,8 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             //showDialog(SAVING_DIALOG);
             mHandler.sendEmptyMessageDelayed(SHOW_SAVING,50);
 
-            detailLocation = (EditText) findViewById(R.id.EventLocationContent);
-            detailDescription = (EditText) findViewById(R.id.EventNotesContent);
+            detailLocation = (EditText) findViewById(R.id.EventLocationContentDetail);
+            detailDescription = (EditText) findViewById(R.id.EventNotesContentDetail);
 
             //get repeat option
             String repeat_str = repeatSpinner.getSelectedItem().toString();
@@ -451,7 +475,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             event.setRepeat(repeatOption);
             event.setColor(colorOption);
 
-            scheduler.addEvent(event);
+            scheduler.updateEvent(event);
         }
         catch (Exception e) {
             if ( e.getMessage() != null ) Log.d(TAG,e.getMessage());
