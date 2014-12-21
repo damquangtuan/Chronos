@@ -109,6 +109,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
 	boolean prefer24hourFormat = false;
     private MySQLiteHelper db = null;
+    private Scheduler scheduler = null;
 
 	private String[] repeatRules;
 	private String[] repeatRulesValues;
@@ -179,6 +180,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 		super.onCreate(savedInstanceState);
 		this.setContentView(R.layout.event_edit);
         db = new MySQLiteHelper(this);
+        scheduler = new Scheduler(db);
         //db.deleteAll();
 		//getEventAction();
 		this.loadLayout();
@@ -519,7 +521,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
             event.setRepeat(repeatOption);
             event.setColor(colorOption);
 
-            db.addEvent(event);
+            scheduler.addEvent(event);
 		}
 		catch (Exception e) {
 			if ( e.getMessage() != null ) Log.d(TAG,e.getMessage());

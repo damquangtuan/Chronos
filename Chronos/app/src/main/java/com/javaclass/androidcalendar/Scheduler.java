@@ -161,6 +161,7 @@ public class Scheduler {
     public void updateEvent(Event event) {
         db.updateEvent(event);
     }
+
     public void addEvent(Event event) {
         db.addEvent(event);
     }

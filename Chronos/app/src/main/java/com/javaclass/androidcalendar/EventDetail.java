@@ -231,7 +231,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         // Apply the adapter to the spinner
         repeatSpinner.setAdapter(adapter);
         repeatSpinner.setOnItemSelectedListener(this);
-
+        repeatSpinner.setSelection(event.getRepeat());
 
         //get and set color
         colorSpinner = (Spinner) findViewById(R.id.color_optionDetail);
@@ -243,6 +243,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         // Apply the adapter to the spinner
         colorSpinner.setAdapter(colorAdapter);
         colorSpinner.setOnItemSelectedListener(this);
+        colorSpinner.setSelection(event.getColor());
 
 
         //location view
@@ -456,7 +457,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             }
             //saving event
 
-            Event event = new Event();
+            Event modifiedEvent = new Event();
             //get value from dialog
             String name = eventName.getText().toString();
             String location = detailLocation.getText().toString();
@@ -467,15 +468,16 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             long start = s.getTime();
             long end = e.getTime();
 
-            event.setName(name);
-            event.setLocation(location);
-            event.setDescription(description);
-            event.setStart(start);
-            event.setEnd(end);
-            event.setRepeat(repeatOption);
-            event.setColor(colorOption);
+            modifiedEvent.setEventId(event.getEventId());
+            modifiedEvent.setName(name);
+            modifiedEvent.setLocation(location);
+            modifiedEvent.setDescription(description);
+            modifiedEvent.setStart(start);
+            modifiedEvent.setEnd(end);
+            modifiedEvent.setRepeat(repeatOption);
+            modifiedEvent.setColor(colorOption);
 
-            scheduler.updateEvent(event);
+            scheduler.updateEvent(modifiedEvent);
         }
         catch (Exception e) {
             if ( e.getMessage() != null ) Log.d(TAG,e.getMessage());
