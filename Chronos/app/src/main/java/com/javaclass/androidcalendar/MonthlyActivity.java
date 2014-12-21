@@ -2,6 +2,7 @@ package com.javaclass.androidcalendar;
 
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -131,6 +132,9 @@ public class MonthlyActivity extends ActionBarActivity
             // 1. change activity to get new event information from the user
             // 2. add it to db
             // 3. update monthly event list
+
+            Intent intent = new Intent(this, EventEdit.class);
+            startActivity(intent);
         }
     }
 
@@ -155,7 +159,7 @@ public class MonthlyActivity extends ActionBarActivity
 
         // get events from the db
         MySQLiteHelper db = new MySQLiteHelper(this);
-        Scheduler scheduler = new Scheduler(db);
+        EventScheduler scheduler = new EventScheduler(db);
         List<Event> event_list = scheduler.getEvents(year, month);
 
         // update monthly event list with the given list

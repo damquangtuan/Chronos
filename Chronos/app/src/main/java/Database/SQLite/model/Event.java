@@ -23,6 +23,11 @@ public class Event {
 	public static final int COLOR_PURPLE = 4;
 	public static final int COLOR_GREEN = 5;
 
+    // 'repeat' should be one of below
+    public static final int REPEAT_NO = 0;
+    public static final int REPEAT_DAY = 1;
+    public static final int REPEAT_WEEK = 2;
+
     public Event() {
 
     }
