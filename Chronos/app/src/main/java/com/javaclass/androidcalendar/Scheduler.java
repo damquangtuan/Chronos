@@ -188,13 +188,37 @@ public class Scheduler {
                         //first go through day by day from start date to end date
                         for (Date date = startCal.getTime(); !startCal.after(endCal); startCal.add(Calendar.DATE, 1),
                                 date = startCal.getTime()) {
-                            Event newEvent = new Event();
-                            newEvent = event; // clone from existing event
+                            Event newEvent = new Event(); //declare a new event and set value for that
+                            newEvent.setName(event.getName());
+                            newEvent.setDescription(event.getDescription());
+                            newEvent.setLocation(event.getLocation());
+                            newEvent.setColor(event.getColor());
+                            newEvent.setRepeat(event.getRepeat());
+
                             newEvent.setStart(date.getTime()); //set date again
                             int hour = endCal.get(endCal.HOUR_OF_DAY); //get hour
                             int minute = endCal.get(endCal.MINUTE); //get minute
-                            date.setHours(hour);//set hour
-                            date.setMinutes(minute);//set minute
+                            date.setHours(hour);//set hour of end date
+                            date.setMinutes(minute);//set minute of end date
+                            newEvent.setEnd(date.getTime()); //set end time which including end hour of event
+                            returnList.add(newEvent); //add to event list
+                        }
+                    } else if (event.getRepeat() == 2) {
+                        //first go through day by day from start date to end date
+                        for (Date date = startCal.getTime(); !startCal.after(endCal); startCal.add(Calendar.DATE, 7),
+                                date = startCal.getTime()) {
+                            Event newEvent = new Event(); //declare a new event and set value for that
+                            newEvent.setName(event.getName());
+                            newEvent.setDescription(event.getDescription());
+                            newEvent.setLocation(event.getLocation());
+                            newEvent.setColor(event.getColor());
+                            newEvent.setRepeat(event.getRepeat());
+
+                            newEvent.setStart(date.getTime()); //set date again
+                            int hour = endCal.get(endCal.HOUR_OF_DAY); //get hour
+                            int minute = endCal.get(endCal.MINUTE); //get minute
+                            date.setHours(hour);//set hour of end date
+                            date.setMinutes(minute);//set minute of end date
                             newEvent.setEnd(date.getTime()); //set end time which including end hour of event
                             returnList.add(newEvent); //add to event list
                         }
