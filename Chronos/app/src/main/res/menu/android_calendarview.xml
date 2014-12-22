@@ -27,6 +27,10 @@
             android:title="@string/action_week_view"
             android:orderInCategory="100"
             app:showAsAction="ifRoom"/>
+        <item android:id="@+id/action_month_view"
+            android:title="@string/MonthlyView"
+            android:orderInCategory="100"
+            app:showAsAction="ifRoom"/>
     </group>
 
 </menu>

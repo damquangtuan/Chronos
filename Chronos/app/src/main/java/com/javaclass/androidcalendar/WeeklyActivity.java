@@ -113,6 +113,10 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
                     mWeekView.setEventTextSize((int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 10, getResources().getDisplayMetrics()));
                 }
                 return true;
+            case R.id.action_month_view:
+                Intent monthlyView = new Intent(WeeklyActivity.this, MonthlyActivity.class);
+                startActivity(monthlyView);
+                break;
         }
 
         return super.onOptionsItemSelected(item);
