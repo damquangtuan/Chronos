@@ -69,7 +69,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
     public void addEvent(Event event){
         //for logging
         Log.d(TAG, "addEvent " + event.toString());
-        String dataFormat = "yyyy-mm-dd hh:mm:ss";
+        String dataFormat = "yyyy-MM-dd hh:mm:ss";
         // 1. get reference to writable DB
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -174,7 +174,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 
         // 1. get reference to writable DB
         SQLiteDatabase db = this.getWritableDatabase();
-        String dataFormat = "yyyyy-mm-dd hh:mm:ss";
+        String dataFormat = "yyyy-MM-dd hh:mm:ss";
 
         // 2. create ContentValues to add key "column"/value
         ContentValues values = new ContentValues();

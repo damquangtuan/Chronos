@@ -203,7 +203,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         month = cal.get(Calendar.MONTH);
         year = cal.get(Calendar.YEAR);
 
-        String dateFormat = "yyyy-mm-dd";
+        String dateFormat = "yyyy-MM-dd";
         detailStartDate = (EditText) findViewById(R.id.detailStartText);
         detailStartDate.setText(event.getStartDate(dateFormat));//set event start date
 
