@@ -81,35 +81,26 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
     public static final int REPEAT_DAY = 1;
     public static final int REPEAT_WEEK = 2;
 
-	// keys for the data we return.
-	public static final String			resultSimpleAcalEvent		= "newSimpleEvent";
-	public static final String			resultAcalEvent					= "newAcalEvent";
-	public static final String			resultCollectionId			= "newCollectionId";
+    //Color
+    public static final int COLOR_RED = 0;
+    public static final int COLOR_BLUE = 1;
+    public static final int COLOR_YELLOW = 2;
+    public static final int COLOR_PURPLE = 3;
+    public static final int COLOR_GREEN = 4;
 
-	public static final String RESOURCE_ID_KEY = "resourceId";
-	public static final String RECCURENCE_ID_KEY = "reccurenceId";
-	public static final String ACTION_KEY = "action";
-	public static final String NEW_EVENT_DATE_TIME_KEY = "datetime";
 
 	public static final int ACTION_EDIT = 1;
 	public static final int ACTION_CREATE = 2;
 	public static final int ACTION_COPY = 3;
 	public static final int ACTION_DELETE = 4;
 
-	boolean prefer24hourFormat = false;
     private MySQLiteHelper db = null;
     private Scheduler scheduler = null;
 
-	private String[] repeatRules;
-	private String[] repeatRulesValues;
-	//private String[] eventChangeRanges; // See strings.xml R.array.EventChangeAffecting
 
 	private String[] alarmRelativeTimeStrings;
 	// Must match R.array.RelativeAlarmTimes (strings.xml)
 
-	//GUI Components
-	private ImageButton btnStartDate;
-	private ImageButton btnEndDate;
 
     private EditText editStartDate;
     private EditText editEndDate;
@@ -128,10 +119,9 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
     private Spinner repeatSpinner;
     private Spinner colorSpinner;
-	private String[] collectionsArray;
 
 	private int action;
-	private int instances = -1;
+
 
 
 
@@ -234,12 +224,6 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 		notesView = (TextView) this.findViewById(R.id.EventNotesContent);
 		locationView.setOnFocusChangeListener(this);
 		notesView.setOnFocusChangeListener(this);
-
-		//Button listeners
-		//setListen(btnStartDate,START_DATE_DIALOG);
-		//setListen(btnEndDate,END_DATE_DIALOG);
-		//setListen(alarmsView,ADD_ALARM_DIALOG);
-		//setListen(repeatsView,SET_REPEAT_RULE_DIALOG);
 	}
 
 	private void setListen(Button b, final int dialog) {
@@ -373,7 +357,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
     @Override
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
+        // An item was selected. We can retrieve the selected item using
         // parent.getItemAtPosition(pos).toString();
         //repeatOption = pos;
     }
@@ -423,15 +407,15 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
             //get color option
             String color_str = colorSpinner.getSelectedItem().toString();
             if(color_str.equals("Red")) {
-                colorOption = 0;
+                colorOption = COLOR_RED;
             } else if (color_str.equals("Blue")) {
-                colorOption = 1;
+                colorOption = COLOR_BLUE;
             } else if (color_str.equals("Yellow")) {
-                colorOption = 2;
+                colorOption = COLOR_YELLOW;
             } else if (color_str.equals("Purple")) {
-                colorOption = 3;
+                colorOption = COLOR_PURPLE;
             } else if (color_str.equals("Green")) {
-                colorOption = 4;
+                colorOption = COLOR_GREEN;
             }
             //saving event
 

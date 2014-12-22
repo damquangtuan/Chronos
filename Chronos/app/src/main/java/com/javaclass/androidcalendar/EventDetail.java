@@ -48,6 +48,12 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     public static final int REPEAT_DAY = 1;
     public static final int REPEAT_WEEK = 2;
 
+    //Color
+    public static final int COLOR_RED = 0;
+    public static final int COLOR_BLUE = 1;
+    public static final int COLOR_YELLOW = 2;
+    public static final int COLOR_PURPLE = 3;
+    public static final int COLOR_GREEN = 4;
 
     public static final int ACTION_EDIT = 1;
     public static final int ACTION_CREATE = 2;
@@ -56,10 +62,6 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
 
     private MySQLiteHelper db = null;
     private Scheduler scheduler = null;
-
-    //GUI Components
-    private ImageButton btnStartDate;
-    private ImageButton btnEndDate;
 
     private EditText detailStartDate;
     private EditText detailEndDate;
@@ -82,10 +84,8 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
 
     private Spinner repeatSpinner;
     private Spinner colorSpinner;
-    private String[] collectionsArray;
 
     private int action;
-    private int instances = -1;
 
 
 
@@ -381,7 +381,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     @Override
     public void onItemSelected(AdapterView<?> parent, View view,
                                int pos, long id) {
-        // An item was selected. You can retrieve the selected item using
+        // An item was selected. We can retrieve the selected item using
         // parent.getItemAtPosition(pos).toString();
         //repeatOption = pos;
     }
@@ -432,15 +432,15 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             //get color option
             String color_str = colorSpinner.getSelectedItem().toString();
             if(color_str.equals("Red")) {
-                colorOption = 0;
+                colorOption = COLOR_RED;
             } else if (color_str.equals("Blue")) {
-                colorOption = 1;
+                colorOption = COLOR_BLUE;
             } else if (color_str.equals("Yellow")) {
-                colorOption = 2;
+                colorOption = COLOR_YELLOW;
             } else if (color_str.equals("Purple")) {
-                colorOption = 3;
+                colorOption = COLOR_PURPLE;
             } else if (color_str.equals("Green")) {
-                colorOption = 4;
+                colorOption = COLOR_GREEN;
             }
             //saving event
 

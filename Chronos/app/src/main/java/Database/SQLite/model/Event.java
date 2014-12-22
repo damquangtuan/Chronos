@@ -16,13 +16,12 @@ public class Event implements Serializable {
 	private long end;
 	private long eventId;
     private int repeat;
-	
-	public static final int DEFAULT_EVENT_ICON = 0;
-	public static final int COLOR_RED = 1;
-	public static final int COLOR_BLUE = 2;
-	public static final int COLOR_YELLOW = 3;
-	public static final int COLOR_PURPLE = 4;
-	public static final int COLOR_GREEN = 5;
+
+	public static final int COLOR_RED = 0;
+	public static final int COLOR_BLUE = 1;
+	public static final int COLOR_YELLOW = 2;
+	public static final int COLOR_PURPLE = 3;
+	public static final int COLOR_GREEN = 4;
 
     // 'repeat' should be one of below
     public static final int REPEAT_NO = 0;
