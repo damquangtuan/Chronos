@@ -1,9 +1,9 @@
 package com.javaclass.androidcalendar;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -23,7 +23,7 @@ import Database.SQLite.MySQLiteHelper;
 import Database.SQLite.model.Event;
 
 
-public class MonthlyActivity extends ActionBarActivity
+public class MonthlyActivity extends Activity
         implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
     private Calendar month_year = null; // use only month and year; day must be assigned to 1
@@ -31,6 +31,7 @@ public class MonthlyActivity extends ActionBarActivity
     private Button month_year_btn = null;
     private Button new_event_btn = null;
     private ListView event_list_view = null;
+    private TextView no_event_msg = null;
 
     //
     // custom adapter for monthly view
@@ -71,6 +72,7 @@ public class MonthlyActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_monthly);
 
         // set today
         month_year = Calendar.getInstance();
@@ -87,9 +89,13 @@ public class MonthlyActivity extends ActionBarActivity
         new_event_btn.setOnClickListener(this);
 
         event_list_view = (ListView)findViewById(R.id.event_list_view);
+        event_list_view.setVisibility(View.VISIBLE);
 
+        no_event_msg = (TextView)findViewById(R.id.no_event_msg);
+        no_event_msg.setVisibility(View.INVISIBLE);
 
-        setContentView(R.layout.activity_monthly);
+        // show current month and year
+        updateCalender(month_year.get(Calendar.YEAR), month_year.get(Calendar.MONTH));
     }
 
 
@@ -147,7 +153,23 @@ public class MonthlyActivity extends ActionBarActivity
 
     // set the calendar with a given year and month
     private void updateCalender(int year, int month) {
-        String month_year_str = month_year.get(Calendar.MONTH) + " "  +
+        final String[] month_names = {
+                "Jan.",
+                "Feb.",
+                "Mar.",
+                "Apr.",
+                "May",
+                "Jun.",
+                "Jul.",
+                "Aug.",
+                "Sep.",
+                "Oct.",
+                "Nov.",
+                "Dec."
+        };
+
+
+        String month_year_str = month_names[month_year.get(Calendar.MONTH)] + " "  +
                 month_year.get(Calendar.YEAR);
 
         // show selected month & year
@@ -162,8 +184,17 @@ public class MonthlyActivity extends ActionBarActivity
         EventScheduler scheduler = new EventScheduler(db);
         List<Event> event_list = scheduler.getEvents(year, month);
 
-        // update monthly event list with the given list
-        event_list_view.setAdapter(new EventAdapter(this, R.layout.monthly_list, event_list));
+        if(!event_list.isEmpty()) {
+            event_list_view.setVisibility(View.VISIBLE);
+            no_event_msg.setVisibility(View.INVISIBLE);
+
+            // update monthly event list with the given list
+            event_list_view.setAdapter(new EventAdapter(this, R.layout.monthly_list, event_list));
+        }
+        else {
+            event_list_view.setVisibility(View.INVISIBLE);
+            no_event_msg.setVisibility(View.VISIBLE);
+        }
     }
 
 }
