@@ -158,6 +158,9 @@ public class Scheduler {
     }
 
 
+    public void deleteEvent(Event event) {
+        db.deleteEvent(event);
+    }
     public void updateEvent(Event event) {
         db.updateEvent(event);
     }

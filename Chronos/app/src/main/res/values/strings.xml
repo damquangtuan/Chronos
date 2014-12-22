@@ -35,6 +35,7 @@
     <string name="Save">Save</string>
     <string name="Edit">Edit</string>
     <string name="Cancel">Cancel</string>
+    <string name="Delete">X</string>
     <string name="selectStartDate">Select Start Date</string>
     <string name="selectEndDate">Select End Date</string>
 

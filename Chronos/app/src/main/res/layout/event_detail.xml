@@ -40,6 +40,14 @@
 					android:paddingLeft="2dp"
 					android:singleLine="true"
 					android:textSize="26sp" />
+
+                <Button
+                    android:id="@+id/event_delete_buttonDetail"
+                    style="@style/themed_delete_button"
+                    android:layout_alignParentRight="true"
+                    android:layout_height="wrap_content"
+                    android:text="@string/Delete"
+                    android:layout_width="wrap_content" />
 				<!-- Outer Layout for from/to -->
 				<RelativeLayout
 					android:id="@+id/EventFromToLayoutDetail"

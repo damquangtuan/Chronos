@@ -1,9 +1,11 @@
 package com.javaclass.androidcalendar;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,6 +44,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     public static final int END_DATE = 3;
     public static final int START = 4;
     public static final int END = 5;
+    public static final int DELETE = 6;
 
     //repeater
     public static final int REPEAT_NO = 0;
@@ -167,6 +170,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         this.setupButton(R.id.imageEndButtonDetail, END_DATE);
         this.setupButton(R.id.btnTimeStartDetail, START);
         this.setupButton(R.id.btnTimeEndDetail, END);
+        this.setupButton(R.id.event_delete_buttonDetail, DELETE);
 
         imageStartButton = (ImageButton) findViewById(R.id.imageStartButtonDetail);
 
@@ -370,6 +374,23 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
                             }
                         }, mHour, mMinute, false);
                 tpdEnd.show();
+                break;
+            case DELETE:
+                new AlertDialog.Builder(this)
+                        .setIcon(android.R.drawable.ic_dialog_alert)
+                        .setTitle("Deleting Event")
+                        .setMessage("Are you sure you want to delete this event?")
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                scheduler.deleteEvent(event);
+                                finish();
+                            }
+
+                        })
+                        .setNegativeButton("No", null)
+                        .show();
                 break;
         }
     }
