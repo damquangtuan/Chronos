@@ -26,17 +26,34 @@ import Database.SQLite.model.Event;
 public class MonthlyActivity extends Activity
         implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
+    public static final String[] MONTH_NAMES = {
+            "Jan.",
+            "Feb.",
+            "Mar.",
+            "Apr.",
+            "May",
+            "Jun.",
+            "Jul.",
+            "Aug.",
+            "Sep.",
+            "Oct.",
+            "Nov.",
+            "Dec."
+    };
+
+
     private Calendar month_year = null; // use only month and year; day must be assigned to 1
 
     private Button month_year_btn = null;
     private Button new_event_btn = null;
+    private Button clear_events_btn = null;
     private ListView event_list_view = null;
     private TextView no_event_msg = null;
 
     //
     // custom adapter for monthly view
     //
-    private class EventAdapter extends ArrayAdapter<Event> {
+    private class EventAdapter extends ArrayAdapter<Event> implements View.OnClickListener{
         private List<Event> items;
 
         public EventAdapter(Context context, int textViewResourceId, List<Event> items) {
@@ -54,18 +71,34 @@ public class MonthlyActivity extends Activity
 
             Event p = items.get(position);
             if (p != null) {
-                TextView day = (TextView) findViewById(R.id.day_of_month);
-                TextView event_name = (TextView) findViewById(R.id.event_name);
+                TextView day = (TextView)v.findViewById(R.id.day_of_month);
+                TextView event_name = (TextView)v.findViewById(R.id.event_name);
+                TextView start_time = (TextView)v.findViewById(R.id.start_time);
+                TextView end_time = (TextView)v.findViewById(R.id.end_time);
+                TextView event_desc = (TextView)v.findViewById(R.id.event_desc);
 
-                // calculate a day of a month
-                Calendar c = Calendar.getInstance();
-                c.setTimeInMillis(p.getStart());
+                Button del_btn = (Button)v.findViewById(R.id.delete_event_btn);
+                del_btn.setOnClickListener(this);
 
-                // set the day and the event day on that day
-                day.setText(c.get(Calendar.DAY_OF_MONTH) + " th");
+                // calculate event time
+                Calendar start = Calendar.getInstance();
+                start.setTimeInMillis(p.getStart());
+
+                Calendar end = Calendar.getInstance();
+                end.setTimeInMillis(p.getEnd());
+
+                // set event information
+                day.setText(start.get(Calendar.DAY_OF_MONTH) + " th");
                 event_name.setText(p.getName());
+                start_time.setText(p.getStartDate("yyyy-MM-dd HH:mm"));
+                end_time.setText(p.getEndDate("yyyy-MM-dd HH:mm"));
+                event_desc.setText(p.getDescription());
             }
             return v;
+        }
+
+        @Override
+        public void onClick(View view) {
         }
     }
 
@@ -87,6 +120,9 @@ public class MonthlyActivity extends Activity
 
         new_event_btn = (Button)findViewById(R.id.new_event_btn);
         new_event_btn.setOnClickListener(this);
+
+        clear_events_btn = (Button)findViewById(R.id.clear_events_btn);
+        clear_events_btn.setOnClickListener(this);
 
         event_list_view = (ListView)findViewById(R.id.event_list_view);
         event_list_view.setVisibility(View.VISIBLE);
@@ -142,6 +178,11 @@ public class MonthlyActivity extends Activity
             Intent intent = new Intent(this, EventEdit.class);
             startActivity(intent);
         }
+
+        // clear all event on a given month
+        else if(view.equals(clear_events_btn)) {
+
+        }
     }
 
     @Override
@@ -153,23 +194,7 @@ public class MonthlyActivity extends Activity
 
     // set the calendar with a given year and month
     private void updateCalender(int year, int month) {
-        final String[] month_names = {
-                "Jan.",
-                "Feb.",
-                "Mar.",
-                "Apr.",
-                "May",
-                "Jun.",
-                "Jul.",
-                "Aug.",
-                "Sep.",
-                "Oct.",
-                "Nov.",
-                "Dec."
-        };
-
-
-        String month_year_str = month_names[month_year.get(Calendar.MONTH)] + " "  +
+        String month_year_str = MONTH_NAMES[month_year.get(Calendar.MONTH)] + " "  +
                 month_year.get(Calendar.YEAR);
 
         // show selected month & year

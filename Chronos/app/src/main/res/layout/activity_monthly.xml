@@ -21,8 +21,8 @@
         android:text="Add"
         android:id="@+id/new_event_btn"
         android:layout_below="@+id/month_year_btn"
-        android:layout_alignRight="@+id/event_list_view"
-        android:layout_alignEnd="@+id/event_list_view" />
+        android:layout_toLeftOf="@+id/clear_events_btn"
+        android:layout_toStartOf="@+id/clear_events_btn" />
 
     <ListView
         android:layout_width="wrap_content"
@@ -41,5 +41,15 @@
         android:id="@+id/no_event_msg"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear"
+        android:id="@+id/clear_events_btn"
+        android:layout_alignTop="@+id/new_event_btn"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>
