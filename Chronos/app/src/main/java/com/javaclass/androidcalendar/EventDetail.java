@@ -265,9 +265,9 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
                 Button saveButton = (Button) findViewById(R.id.event_save_buttonDetail);
                 if (saveButton.getText().toString().equals("Edit")) {
                     setEnable(true);
-                    saveButton.setText("Save");
+                    saveButton.setText("Save");//if the text is edit, set the button text to Save
                 } else {
-                    applyChanges();
+                    applyChanges();//save what we made change to UI
                     finish();
                 }
                 break;

@@ -228,12 +228,6 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 		switch ( button ) {
 		case SAVE:
 			applyChanges();
-            //hangout for 500 mini seconds
-            try {
-                Thread.sleep(500);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             finish();
 			break;
 		case CANCEL:
@@ -415,7 +409,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 		}
 		catch (Exception e) {
 			if ( e.getMessage() != null ) Log.d(TAG,e.getMessage());
-			//if (Constants.LOG_DEBUG)Log.d(TAG,Log.getStackTraceString(e));
+
 			return false;
 		}
 
