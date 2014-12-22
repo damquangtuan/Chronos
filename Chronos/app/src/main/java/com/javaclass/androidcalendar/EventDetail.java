@@ -409,9 +409,6 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
 
 
         try {
-            //display savingdialog
-
-            //ResourceManager.getInstance(this).sendRequest(new RREventEditedRequest(this, event, action, instances));
 
             //set message for 10 seconds to fail.
             mHandler.sendEmptyMessageDelayed(SAVE_FAILED, 100000);
