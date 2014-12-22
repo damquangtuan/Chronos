@@ -48,15 +48,6 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     public static final int REPEAT_DAY = 1;
     public static final int REPEAT_WEEK = 2;
 
-    // keys for the data we return.
-    public static final String			resultSimpleAcalEvent		= "newSimpleEvent";
-    public static final String			resultAcalEvent					= "newAcalEvent";
-    public static final String			resultCollectionId			= "newCollectionId";
-
-    public static final String RESOURCE_ID_KEY = "resourceId";
-    public static final String RECCURENCE_ID_KEY = "reccurenceId";
-    public static final String ACTION_KEY = "action";
-    public static final String NEW_EVENT_DATE_TIME_KEY = "datetime";
 
     public static final int ACTION_EDIT = 1;
     public static final int ACTION_CREATE = 2;
@@ -139,7 +130,6 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
         final Bundle extras = intent.getExtras();
         this.event = (Event)extras.get("event");
         //db.deleteAll();
-        //getEventAction();
         this.loadLayout();
     }
 
@@ -435,11 +425,11 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
             //get repeat option
             String repeat_str = repeatSpinner.getSelectedItem().toString();
             if(repeat_str.equals("No Repeat")) {
-                repeatOption = 0;
+                repeatOption = REPEAT_NO;
             } else if (repeat_str.equals("Daily Repeat")) {
-                repeatOption = 1;
+                repeatOption = REPEAT_DAY;
             } else if (repeat_str.equals("Weekly Repeat")) {
-                repeatOption = 2;
+                repeatOption = REPEAT_WEEK;
             }
 
             //get color option

@@ -62,7 +62,9 @@ import java.util.Date;
 import Database.SQLite.model.Event;
 import Database.SQLite.MySQLiteHelper;
 
-@SuppressWarnings("rawtypes")
+/**
+ * Created by damquangtuan on 18/12/2014.
+ */
 public class EventEdit extends Activity implements  OnClickListener, OnCheckedChangeListener,
         OnFocusChangeListener, AdapterView.OnItemSelectedListener {
 
@@ -93,19 +95,6 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 	public static final int ACTION_CREATE = 2;
 	public static final int ACTION_COPY = 3;
 	public static final int ACTION_DELETE = 4;
-
-	public static final int INSTANCES_SINGLE = 0;
-	public static final int INSTANCES_ALL = 1;
-	public static final int INSTANCES_THIS_FUTURE = 2;
-
-	private static final int START_DATE_DIALOG = 0;
-	private static final int END_DATE_DIALOG = 2;
-	private static final int SELECT_COLLECTION_DIALOG = 4;
-	private static final int ADD_ALARM_DIALOG = 5;
-	private static final int SET_REPEAT_RULE_DIALOG = 6;
-	private static final int WHICH_EVENT_DIALOG = 7;
-	private static final int LOADING_EVENT_DIALOG = 8;
-	private static final int SAVING_DIALOG = 9;
 
 	boolean prefer24hourFormat = false;
     private MySQLiteHelper db = null;
@@ -182,59 +171,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
         db = new MySQLiteHelper(this);
         scheduler = new Scheduler(db);
         //db.deleteAll();
-		//getEventAction();
 		this.loadLayout();
-	}
-
-	@SuppressWarnings("unchecked")
-	private void getEventAction() {
-		Bundle b = this.getIntent().getExtras();
-		if ( b.containsKey(ACTION_KEY) ) {
-			action = b.getInt(ACTION_KEY);
-		} else {
-			//default action is create
-			action = ACTION_CREATE;
-		}
-
-		switch ( action ) {
-			case ACTION_COPY:
-			case ACTION_EDIT:
-
-				// show loading screen.
-				mHandler.sendMessageDelayed(mHandler.obtainMessage(SHOW_LOADING), 50);
-
-				// We need to load the event - we must be given rid about the
-				// event to be edited.
-				if ( !b.containsKey(RESOURCE_ID_KEY) ) {
-					// invalid data supplied
-					this.finish();
-					return;
-				}
-				long rid = b.getLong(RESOURCE_ID_KEY);
-				String rrid = null;
-				// get the recurrenceId if there is one
-				if ( b.containsKey(RECCURENCE_ID_KEY) ) {
-					// get master
-					rrid = b.getString(RECCURENCE_ID_KEY);
-				}
-
-				break;
-
-			case ACTION_CREATE:
-
-				try {
-				}
-				catch ( Exception e ) {}
-
-				try {
-				}
-				catch ( Exception e ) {
-					Log.e(TAG, "Error creating a new event: " + e + Log.getStackTraceString(e));
-					this.finish();
-					return;
-				}
-				break;
-		}
 	}
 
 	private void loadLayout() {
@@ -480,11 +417,11 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
             //get repeat option
             String repeat_str = repeatSpinner.getSelectedItem().toString();
             if(repeat_str.equals("No Repeat")) {
-                repeatOption = 0;
+                repeatOption = REPEAT_NO;
             } else if (repeat_str.equals("Daily Repeat")) {
-                repeatOption = 1;
+                repeatOption = REPEAT_DAY;
             } else if (repeat_str.equals("Weekly Repeat")) {
-                repeatOption = 2;
+                repeatOption = REPEAT_WEEK;
             }
 
             //get color option
