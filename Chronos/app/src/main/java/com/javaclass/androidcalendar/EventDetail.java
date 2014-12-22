@@ -58,10 +58,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     public static final int COLOR_PURPLE = 3;
     public static final int COLOR_GREEN = 4;
 
-    public static final int ACTION_EDIT = 1;
     public static final int ACTION_CREATE = 2;
-    public static final int ACTION_COPY = 3;
-    public static final int ACTION_DELETE = 4;
 
     private MySQLiteHelper db = null;
     private Scheduler scheduler = null;
@@ -88,22 +85,8 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
     private Spinner repeatSpinner;
     private Spinner colorSpinner;
 
-    private int action;
-
-
-
-    private static final int REFRESH = 0;
-    private static final int FAIL = 1;
-    private static final int CONFLICT = 2;
-    private static final int SHOW_LOADING = 3;
-    private static final int GIVE_UP = 4;
-    private static final int SAVE_RESULT = 5;
     private static final int SAVE_FAILED = 6;
     private static final int SHOW_SAVING = 7;
-
-    private boolean saveSucceeded = false;
-    private boolean isSaving = false;
-    private boolean isLoading = false;
     private Calendar cal;
     private int day;
     private int month;
@@ -184,9 +167,6 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
 
         //Title
         this.eventName = (TextView) this.findViewById(R.id.EventNameDetail);
-        if ( action == ACTION_CREATE ) {
-            eventName.setSelectAllOnFocus(true);
-        }
         eventName.setOnFocusChangeListener(this);
         eventName.setText(event.getName()); // set event name
 
@@ -376,6 +356,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
                 tpdEnd.show();
                 break;
             case DELETE:
+                //delete event dialog
                 new AlertDialog.Builder(this)
                         .setIcon(android.R.drawable.ic_dialog_alert)
                         .setTitle("Deleting Event")
@@ -384,7 +365,7 @@ public class EventDetail extends Activity implements View.OnClickListener, Compo
                         {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                                scheduler.deleteEvent(event);
+                                scheduler.deleteEvent(event);//delete event
                                 finish();
                             }
 

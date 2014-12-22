@@ -89,17 +89,9 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
     public static final int COLOR_GREEN = 4;
 
 
-	public static final int ACTION_EDIT = 1;
-	public static final int ACTION_CREATE = 2;
-	public static final int ACTION_COPY = 3;
-	public static final int ACTION_DELETE = 4;
 
     private MySQLiteHelper db = null;
     private Scheduler scheduler = null;
-
-
-	private String[] alarmRelativeTimeStrings;
-	// Must match R.array.RelativeAlarmTimes (strings.xml)
 
 
     private EditText editStartDate;
@@ -120,23 +112,9 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
     private Spinner repeatSpinner;
     private Spinner colorSpinner;
 
-	private int action;
-
-
-
-
-	private static final int REFRESH = 0;
-	private static final int FAIL = 1;
-	private static final int CONFLICT = 2;
-	private static final int SHOW_LOADING = 3;
-	private static final int GIVE_UP = 4;
-	private static final int SAVE_RESULT = 5;
 	private static final int SAVE_FAILED = 6;
 	private static final int SHOW_SAVING = 7;
 
-	private boolean saveSucceeded = false;
-	private boolean isSaving = false;
-	private boolean isLoading = false;
     private Calendar cal;
     private int day;
     private int month;
@@ -144,9 +122,6 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
     // Variable for storing current date and time
     private int mYear, mMonth, mDay, mHour, mMinute;
-
-	private Dialog loadingDialog = null;
-	private Dialog savingDialog = null;
 
 	private final Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
@@ -179,9 +154,7 @@ public class EventEdit extends Activity implements  OnClickListener, OnCheckedCh
 
 		//Title
 		this.eventName = (TextView) this.findViewById(R.id.EventName);
-		if ( action == ACTION_CREATE ) {
-			eventName.setSelectAllOnFocus(true);
-		}
+
 		eventName.setOnFocusChangeListener(this);
 
 
