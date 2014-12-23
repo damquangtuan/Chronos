@@ -41,9 +41,14 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
         db = new MySQLiteHelper(this);
         scheduler = new Scheduler(db);
 
+        // Jungkeol: using this button for weather activity
+        Button settingEvent =(Button) findViewById(R.id.week_Setting_button);
+        settingEvent.setOnClickListener(this);
+
         Button addEvent = (Button) findViewById(R.id.week_add_button);
         addEvent.setOnClickListener(this);
         // Get a reference for the week view in the layout.
+
         mWeekView = (WeekView) findViewById(R.id.weekView);
 
         // Show a toast message about the touched event.
@@ -276,7 +281,10 @@ public class WeeklyActivity extends Activity implements WeekView.MonthChangeList
                 break;
             case R.id.week_event_button:
                 break;
+            // Jungkeol: using this button for weather activity
             case R.id.week_Setting_button:
+                Intent weather = new Intent(WeeklyActivity.this, WeatherActivity.class);
+                startActivity(weather);
                 break;
             case R.id.week_add_button:
                 Intent event = new Intent(WeeklyActivity.this, EventEdit.class);
