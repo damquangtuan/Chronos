@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.Calendar;
+import java.util.Iterator;
 import java.util.List;
 
 import Database.SQLite.MySQLiteHelper;
@@ -131,7 +132,7 @@ public class MonthlyActivity extends Activity
         no_event_msg.setVisibility(View.INVISIBLE);
 
         // show current month and year
-        updateCalender(month_year.get(Calendar.YEAR), month_year.get(Calendar.MONTH));
+        updateCalender();
     }
 
 
@@ -177,11 +178,23 @@ public class MonthlyActivity extends Activity
 
             Intent intent = new Intent(this, EventEdit.class);
             startActivity(intent);
+
+            updateCalender();
         }
 
         // clear all event on a given month
         else if(view.equals(clear_events_btn)) {
+            MySQLiteHelper db = new MySQLiteHelper(this);
+            Scheduler scheduler = new Scheduler(db);
+            List<Event> event_list = scheduler.getEvents(month_year.get(Calendar.YEAR),
+                    month_year.get(Calendar.MONTH));
 
+            Iterator<Event> i = event_list.iterator();
+            while(i.hasNext()) {
+                scheduler.deleteEvent(i.next());
+            }
+
+            updateCalender();
         }
     }
 
@@ -192,10 +205,14 @@ public class MonthlyActivity extends Activity
         updateCalender(year, month);
     }
 
+    private void updateCalender() {
+        updateCalender(month_year.get(Calendar.YEAR),
+                month_year.get(Calendar.MONTH));
+    }
+
     // set the calendar with a given year and month
     private void updateCalender(int year, int month) {
-        String month_year_str = MONTH_NAMES[month_year.get(Calendar.MONTH)] + " "  +
-                month_year.get(Calendar.YEAR);
+        String month_year_str = MONTH_NAMES[month] + " "  + year;
 
         // show selected month & year
         month_year_btn.setText(month_year_str);
@@ -206,7 +223,7 @@ public class MonthlyActivity extends Activity
 
         // get events from the db
         MySQLiteHelper db = new MySQLiteHelper(this);
-        EventScheduler scheduler = new EventScheduler(db);
+        Scheduler scheduler = new Scheduler(db);
         List<Event> event_list = scheduler.getEvents(year, month);
 
         if(!event_list.isEmpty()) {
@@ -214,7 +231,9 @@ public class MonthlyActivity extends Activity
             no_event_msg.setVisibility(View.INVISIBLE);
 
             // update monthly event list with the given list
-            event_list_view.setAdapter(new EventAdapter(this, R.layout.monthly_list, event_list));
+            EventAdapter adapter = new EventAdapter(this, R.layout.monthly_list, event_list);
+            event_list_view.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
         }
         else {
             event_list_view.setVisibility(View.INVISIBLE);

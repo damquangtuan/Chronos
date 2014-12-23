@@ -5,6 +5,10 @@ import java.util.Calendar;
 /**
  * Created by Jeonghwan on 2014-12-16.
  */
+
+//
+// This class is just for a unit test and not used in this app.
+//
 public class CalendarEvent {
 
     public static final int REPEAT_NO = 0;

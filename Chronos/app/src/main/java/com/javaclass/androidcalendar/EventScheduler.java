@@ -11,91 +11,85 @@ import Database.SQLite.model.Event;
 /**
  * Created by Jeonghwan on 2014-12-21.
  */
+
+//
+// This class is an implement of the controller of this app,
+// but not used except for the unit test.
+// Use 'class Scheduler' instead.
+//
 public class EventScheduler {
 
-    private MySQLiteHelper db = null;
+    private ArrayList<CalendarEvent> event_list; // hold events registered
 
-    public EventScheduler(MySQLiteHelper db) {
-        this.db = db;
+    public EventScheduler() {
+        event_list = new ArrayList<CalendarEvent>();
     }
 
-    public boolean addEvent(Event event) {
-        Event e;
-        List<Event> eventList = db.getAllEvents();
-        List<Event> selected = new ArrayList<Event>();
-        Iterator<Event> i = eventList.iterator();
-
-        while(i.hasNext()) {
-            e = i.next();
-            if(_CheckBetween(e, event.getStart(), event.getEnd())) {
-                selected.add(e);
-            }
-        }
+    // register a new event
+    // this function will fail if the event overlaps others
+    public boolean Add(CalendarEvent event) {
+        ArrayList<CalendarEvent> selected_events = Query(event.start(), event.end());
 
         // this event overlaps other events
-        if(eventList.isEmpty())
+        if(selected_events != null)
             return false;
 
-        db.addEvent(event);
+        event_list.add(event);
 
         return true;
     }
 
-    public void deleteAll() {
-        db.deleteAll();
-    }
+    // remove events ranging 'start' to 'end' from the event list
+    // return the number of events removed
+    public int Remove(Calendar start, Calendar end) {
+        int n = 0;
 
-
-    List<Event> getEvents(int year, int month) {
-        List<Event> eventList = db.getAllEvents();
-        List<Event> returnList = new ArrayList<Event>();
-        Iterator<Event> i = eventList.iterator();
-
-        Calendar start = Calendar.getInstance();
-        start.set(year, month, 1);
-
-        Calendar end = Calendar.getInstance();
-        end.set(year, month, start.getActualMaximum(Calendar.DAY_OF_MONTH));
-
-        Event e = null;
+        CalendarEvent e;
+        Iterator<CalendarEvent> i = event_list.iterator();
         while(i.hasNext()) {
             e = i.next();
-            if(_CheckBetween(e, start.getTimeInMillis(), end.getTimeInMillis())) {
-                returnList.add(e);
+
+            if(_CheckBetween(e, start, end)) {
+                i.remove();
+                ++n;
             }
         }
 
-        return returnList;
+        return n;
     }
 
-    List<Event> getEvents(int year, int month, int day) {
-        List<Event> eventList = db.getAllEvents();
-        List<Event> returnList = new ArrayList<Event>();
-        Iterator<Event> i = eventList.iterator();
+    // remove all events in the list
+    // returns the number of events
+    public int RemoveAll() {
+        int n = event_list.size();
+        event_list.clear();
 
-        Calendar start = Calendar.getInstance();
-        start.set(year, month, day, 0, 0);
+        return n;
+    }
 
-        Calendar end = Calendar.getInstance();
-        start.set(year, month, day, 23, 59);
+    // find events satisfying a given condition
+    // if no such events, null will be returned
+    public ArrayList<CalendarEvent> Query(Calendar start, Calendar end) {
+        ArrayList<CalendarEvent> selected_events = new ArrayList<CalendarEvent>();
 
-        Event e = null;
+        CalendarEvent e;
+        Iterator<CalendarEvent> i = event_list.iterator();
         while(i.hasNext()) {
             e = i.next();
-            if(_CheckBetween(e, start.getTimeInMillis(), end.getTimeInMillis())) {
-                returnList.add(e);
-            }
+
+            if(_CheckBetween(e, start, end))
+                selected_events.add(e);
         }
 
-        return returnList;
+        return !selected_events.isEmpty() ? selected_events : null;
     }
 
     // check out a given event is between 'start' and 'end'
-    private boolean _CheckBetween(Event e, long start, long end) {
+    private boolean _CheckBetween(CalendarEvent e, Calendar start, Calendar end) {
         // no repeat
-        if(e.getRepeat() == Event.REPEAT_NO) {
-            return (e.getStart() >= start && e.getStart() <= end) ||
-                    (e.getEnd() >= start && e.getEnd() <= end);
+        if(e.repeat() == CalendarEvent.REPEAT_NO) {
+            return (e.start().after(start) && e.start().before(end)) ||
+                    (e.end().after(start) && e.end().before(end));
         }
 
 
@@ -105,15 +99,15 @@ public class EventScheduler {
         //
         // find some integer i satisfying two equations below
         // s1 <= s2 + dt * i < e1 or s1 < e2 + dt * i <= e1
-        else if(start <= e.getStart()) {
+        else if(!e.start().after(end)) {
             double dt = 1;
 
-            switch(e.getRepeat()) {
-                case Event.REPEAT_DAY: // every day
+            switch(e.repeat()) {
+                case CalendarEvent.REPEAT_DAY: // every day
                     dt = (long)86400000; // a day in milliseconds
                     break;
 
-                case Event.REPEAT_WEEK: // every week
+                case CalendarEvent.REPEAT_WEEK: // every week
                     dt = (long)604800000; // 7 days in milliseconds
                     break;
 
@@ -122,16 +116,16 @@ public class EventScheduler {
                     break;
             }
 
-            double lower = (double)(start - e.getStart()) / dt;
-            double upper = (double)(end - e.getStart()) / dt;
+            double lower = (double)(start.getTimeInMillis() - e.start().getTimeInMillis()) / dt;
+            double upper = (double)(end.getTimeInMillis() - e.start().getTimeInMillis()) / dt;
             int m = (int)Math.ceil(lower);
             int n = (int)Math.floor(upper);
 
             if(m <= n)
                 return true;
 
-            lower = (double)(start - e.getEnd()) / dt;
-            upper = (double)(end - e.getEnd()) / dt;
+            lower = (double)(start.getTimeInMillis() - e.end().getTimeInMillis()) / dt;
+            upper = (double)(end.getTimeInMillis() - e.end().getTimeInMillis()) / dt;
             m = (int)Math.ceil(lower);
             n = (int)Math.floor(upper);
 
@@ -140,5 +134,4 @@ public class EventScheduler {
         else
             return false;
     }
-
 }
